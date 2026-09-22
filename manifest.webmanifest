@@ -1,0 +1,28 @@
+{
+  "name": "Kiswahili — Swahili lernen",
+  "short_name": "Kiswahili",
+  "description": "Swahili lernen für Dar es Salaam: Lektionen, Vokabeltrainer mit Spaced Repetition, Grammatik und Verbkonjugator.",
+  "lang": "de",
+  "dir": "ltr",
+  "categories": ["education"],
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F6F7F9",
+  "theme_color": "#0E7C6B",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

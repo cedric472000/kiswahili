@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Selbsttest — Lektionsablauf</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="shell">
+  <aside id="rail" class="rail hidden"></aside>
+  <div class="colmain">
+    <div id="topbar" class="topbar hidden"></div>
+    <main id="app"></main>
+  </div>
+</div>
+<nav id="tabbar" class="tabbar hidden"></nav>
+<pre id="log" style="max-width:880px;margin:0 auto;padding:16px;font:13px/1.5 monospace;white-space:pre-wrap"></pre>
+
+<script src="../data/vocab.js"></script>
+<script src="../data/lernfolge.js"></script>
+<script src="../data/verbs.js"></script>
+<script src="../data/lessons.js"></script>
+<script src="../data/grammar.js"></script>
+<script src="../data/methali.js"></script>
+<script src="../js/storage.js"></script>
+<script src="../js/srs.js"></script>
+<script src="../js/conjugator.js"></script>
+<script src="../js/app.js"></script>
+
+<script>
+/* Klickt eine Lektion einmal komplett durch und protokolliert,
+   in welcher Reihenfolge die Phasen kommen und ob gewertet wird. */
+window.addEventListener("load", function () {
+  var out = [];
+  function say(s) { out.push(s); }
+
+  function $(s) { return document.querySelector(s); }
+  function $$(s) { return [].slice.call(document.querySelectorAll(s)); }
+
+  /* Chrome teilt den Speicher über alle file://-Seiten. Ohne Sicherung
+     würde dieser Test den echten Lernfortschritt der lokalen index.html
+     mitlöschen. Also vorher weglegen, hinterher zurücklegen. */
+  var SICHERUNG = null;
+  try { SICHERUNG = localStorage.getItem("kiswahili.v1"); } catch (e) {}
+
+  function speicherZurueck() {
+    try {
+      if (SICHERUNG === null) localStorage.removeItem("kiswahili.v1");
+      else localStorage.setItem("kiswahili.v1", SICHERUNG);
+    } catch (e) {}
+  }
+
+  try {
+    KS.store.reset();
+    KS.store.createProfile("Selbsttest");
+    var L = KS.lessons[0];
+
+    location.hash = "#/lesson/" + L.id;
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
+
+    var phasen = [], guard = 0, pIdx = 0, qIdx = 0;
+    var sawPracticeBeforeQuiz = null;
+
+    while (guard++ < 200) {
+      var ph = $(".phase");
+      var phase = ph ? ph.textContent.trim() : (($(".result") ? "ERGEBNIS" : "?"));
+      phasen.push(phase);
+      if (phase === "ERGEBNIS") break;
+
+      /* Geführte Übung: richtige Antwort eintippen */
+      if ($("#pIn")) {
+        if (sawPracticeBeforeQuiz === null) sawPracticeBeforeQuiz = true;
+        var p = L.practice[pIdx++];
+        $("#pIn").value = p.a.split(",")[0].trim();
+        $("#pGo").click();
+        if (!$("#stepNext")) { say("FEHLER: nach geführter Übung keine Weiter-Schaltfläche"); break; }
+        $("#stepNext").click();
+        continue;
+      }
+      /* Abfrage, Freitext */
+      if ($("#qIn")) {
+        if (sawPracticeBeforeQuiz === null) sawPracticeBeforeQuiz = false;
+        var ex = L.exercises.filter(function (e) { return e.type === "translate"; })[qIdx];
+        $("#qIn").value = ex ? ex.a.split(",")[0].trim() : "";
+        $("#qGo").click();
+        qIdx++;
+        if (!$("#stepNext")) { say("FEHLER: nach Abfrage keine Weiter-Schaltfläche"); break; }
+        $("#stepNext").click();
+        continue;
+      }
+      /* Abfrage, Auswahl */
+      if ($(".choice")) {
+        if (sawPracticeBeforeQuiz === null) sawPracticeBeforeQuiz = false;
+        $$(".choice")[0].click();
+        if (!$("#stepNext")) { say("FEHLER: nach Auswahl keine Weiter-Schaltfläche"); break; }
+        $("#stepNext").click();
+        continue;
+      }
+      /* Reine Lese-Seite */
+      if ($("#stepNext")) { $("#stepNext").click(); continue; }
+      say("FEHLER: Schritt ohne Bedienelement bei Phase '" + phase + "'");
+      break;
+    }
+
+    say("Lektion: " + L.title);
+    say("Schritte insgesamt: " + phasen.length);
+    say("Phasenfolge: " + phasen.join(" > "));
+    say("");
+    var iPractice = phasen.indexOf("Üben");
+    var iQuiz     = phasen.indexOf("Abfrage");
+    var iTeach    = phasen.indexOf("Erklärung");
+    var iVocab    = phasen.indexOf("Wortschatz");
+    say("Erklärung ab Schritt:  " + (iTeach + 1));
+    say("Wortschatz ab Schritt: " + (iVocab + 1));
+    say("Üben ab Schritt:       " + (iPractice + 1));
+    say("Abfrage ab Schritt:    " + (iQuiz + 1));
+    say("");
+    say("PRUEFUNG Erklärung vor Wortschatz:  " + (iTeach < iVocab ? "OK" : "FEHLER"));
+    say("PRUEFUNG Wortschatz vor Üben:       " + (iVocab < iPractice ? "OK" : "FEHLER"));
+    say("PRUEFUNG Üben vor Abfrage:          " + (iPractice < iQuiz ? "OK" : "FEHLER"));
+    say("PRUEFUNG Ergebnis am Ende:          " + (phasen[phasen.length-1] === "ERGEBNIS" ? "OK" : "FEHLER"));
+    say("PRUEFUNG geführt vor gewertet:      " + (sawPracticeBeforeQuiz === true ? "OK" : "FEHLER"));
+
+    var gespeichert = KS.store.profile().lessons[L.id];
+    say("PRUEFUNG Ergebnis gespeichert:      " +
+        (gespeichert && gespeichert.done ? "OK (" + gespeichert.score + "%)" : "FEHLER"));
+
+    /* Lesefassung erreichbar? */
+    location.hash = "#/lesson/" + L.id + "/text";
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
+    var txt = $("#app").textContent || "";
+    say("PRUEFUNG Lesefassung:               " +
+        (txt.indexOf("Lesefassung") >= 0 && txt.indexOf("Wortschatz") >= 0 ? "OK" : "FEHLER"));
+
+    speicherZurueck();
+    say("");
+    say("Lernfortschritt wiederhergestellt" +
+        (SICHERUNG === null ? " (es war keiner vorhanden)." : "."));
+  } catch (e) {
+    speicherZurueck();
+    say("AUSNAHME: " + e.message + "\n" + (e.stack || ""));
+  }
+  document.getElementById("log").textContent = out.join("\n");
+});
+</script>
+</body>
+</html>

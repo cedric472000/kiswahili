@@ -1,0 +1,7 @@
+# Vorschaudateien, die beim Entwickeln entstehen
+_prev_*.html
+
+# Windows / OneDrive
+Thumbs.db
+desktop.ini
+.DS_Store

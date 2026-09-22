@@ -1,0 +1,40 @@
+<title>Kiswahili — Swahili lernen</title>
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Gerüst: links die Navigationsspalte (ab 900px), unten die Tab-Leiste
+     auf dem Handy. Beides füllt app.js, damit es nur eine Quelle gibt. -->
+<div class="shell">
+  <aside id="rail" class="rail hidden"></aside>
+  <div class="colmain">
+    <div id="topbar" class="topbar hidden"></div>
+
+    <main id="app">
+      <noscript>
+        <h1>JavaScript ist abgeschaltet</h1>
+        <p class="lead">Diese Lern-App läuft vollständig im Browser — ohne JavaScript
+        bleibt die Seite leer. Bitte schalte es für diese Seite ein.</p>
+      </noscript>
+    </main>
+
+    <footer>
+      <div class="footer-in">
+        Mwalimu Amani ist eine erfundene Lehrerfigur. Alle Inhalte folgen dem
+        tansanischen Standard-Swahili (Kiswahili sanifu).
+      </div>
+    </footer>
+  </div>
+</div>
+<nav id="tabbar" class="tabbar hidden"></nav>
+
+<!-- Daten zuerst, dann Logik. Bewusst ohne ES-Module, damit dieselben
+     Dateien auch lokal per Doppelklick funktionieren. -->
+<script src="data/vocab.js"></script>
+<script src="data/lernfolge.js"></script>
+<script src="data/verbs.js"></script>
+<script src="data/lessons.js"></script>
+<script src="data/grammar.js"></script>
+<script src="data/methali.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/srs.js"></script>
+<script src="js/conjugator.js"></script>
+<script src="js/app.js"></script>

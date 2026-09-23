@@ -6,8 +6,12 @@ und ein Wortschatz, der auf den Alltag in Dar es Salaam zugeschnitten ist.
 
 ## Starten
 
-`index.html` doppelklicken. Das war's — kein Node, kein npm, kein Build-Schritt,
-keine Internetverbindung nötig.
+Zum Lernen: **https://cedric472000.github.io/kiswahili/** — dort lässt sie sich
+aufs Handy installieren und läuft danach offline.
+
+Zum Entwickeln: `index.html` doppelklicken. Das war's — kein Node, kein npm,
+kein Build-Schritt, keine Internetverbindung nötig. (Service Worker und
+Installieren gibt es per `file://` nicht; das braucht die Web-Adresse.)
 
 Beim ersten Start legt ihr je ein Profil an. Der Fortschritt landet im
 `localStorage` des Browsers und bleibt dort. Wichtig: Immer **denselben Browser**
@@ -153,15 +157,24 @@ und aus enger Laufweite bei Überschriften.
 **Dunkelmodus** ist vollständig gepflegt und folgt sowohl der
 Systemeinstellung als auch einem ausdrücklichen Umschalter (`data-theme`).
 
-## Veröffentlichte Fassung
+## Die Hauptfassung: GitHub Pages
 
-Es gibt zusätzlich eine Web-Fassung unter
+> **https://cedric472000.github.io/kiswahili/**
+
+Das ist die Fassung zum Benutzen. Sie ist **installierbar** (eigenes Icon,
+keine Browserleiste) und **läuft offline** — siehe *Als App aufs Handy* oben.
+Jeder Push auf `main` ist nach ein bis zwei Minuten live; eine Versionsauswahl
+gibt es nicht und braucht es nicht.
+
+### Daneben: die Artefakt-Fassung
 
 > https://claude.ai/code/artifact/7fe40d10-7da3-4dd9-ada5-7a4727a07b7d
 
-Sie ist standardmäßig **privat** — sichtbar wird sie erst, wenn ihr sie über das
-Teilen-Menü der Seite freigebt. Auf dem Handy lässt sie sich über *Zum
-Startbildschirm hinzufügen* wie eine App ablegen.
+Dieselbe App, veröffentlicht über claude.ai. Sie bleibt als Reserve bestehen,
+ist aber **nicht** installierbar und **nicht** offline-fähig: Im Sandbox-Rahmen
+sind Service Worker gesperrt. Wer schon damit gelernt hat, holt seinen
+Fortschritt per *Profil → Fortschritt kopieren* dort heraus und in die
+installierte App hinein.
 
 `artifact.html` ist die Einstiegsdatei dafür: derselbe Inhalt wie `index.html`,
 nur ohne `<!DOCTYPE>`/`<head>`/`<body>` — das Gerüst setzt die Veröffentlichung
@@ -172,15 +185,11 @@ selbst drumherum. Beide laden exakt dieselben CSS-, Daten- und JS-Dateien;
 der `localStorage` hängt an der jeweiligen Adresse. Entscheidet euch für eine
 als Hauptfassung, oder gleicht per Kopieren/Einfügen ab (siehe unten).
 
-**Achtung, Versionsbindung.** Beim Umschalten auf *Anyone with the link* legt
-claude.ai den Link auf die gerade aktuelle Version fest. Wer über den Link
-öffnet (Handy, Freundin), sieht spätere Änderungen dann nicht. Früher ließ
-sich das unter *Share → Shared version → Latest* umstellen; im aktuellen
-Freigabe-Fenster ist diese Zeile verschwunden. Schnellster Test, welche
-Fassung ein Gerät bekommt: das Aussehen. Petrol-Logo mit Farbverlauf und
-Tab-Leiste unten = aktuelle Fassung. Wenn das nicht passt, hilft nur, den
-Link neu zu teilen — oder die Seite auf GitHub Pages zu legen, wo es gar
-keine Versionsauswahl gibt.
+**Achtung, Versionsbindung beim Artefakt.** Beim Umschalten auf *Anyone with
+the link* legt claude.ai den Link auf die gerade aktuelle Version fest; die
+Zeile *Shared version → Latest*, mit der sich das umstellen ließ, ist aus dem
+Freigabe-Fenster verschwunden. Genau deshalb ist GitHub Pages die Hauptfassung:
+Dort gibt es das Problem nicht.
 
 ## Als App aufs Handy (PWA)
 

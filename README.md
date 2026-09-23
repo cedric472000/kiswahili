@@ -238,6 +238,17 @@ Empfohlener Ort: **GitHub Pages** (kostenlos, HTTPS, feste Adresse, jede
 Datei, installiert der Browser den Worker neu und wirft alte Caches weg.
 Ohne Änderung kann ein Gerät sonst auf einem alten Stand hängen bleiben.
 
+**Zwei Fallen, die beim ersten Update zugeschnappt sind** — beide sind
+jetzt behoben und von `test-pwa.js` abgesichert:
+
+1. `cache.addAll()` geht durch den **HTTP-Cache des Browsers**. GitHub Pages
+   liefert Dateien mit `max-age`, also hat der neue Worker exakt die alten
+   Dateien wieder in den Offline-Speicher gelegt — das Update kam nie an.
+   Deshalb holt `install` jede Datei einzeln mit `cache: "reload"`.
+2. Übernimmt der neue Worker die Seite, sind die gerade geladenen Skripte
+   noch die alten. `index.html` lauscht darum auf `controllerchange` und
+   lädt **einmal** neu. Beim allerersten Besuch passiert das nicht.
+
 **Neue Adresse heißt neuer Speicher.** Der `localStorage` hängt an der
 Adresse — in der installierten App fängt der Fortschritt bei null an. Vorher
 auf jedem Gerät *Profil → Fortschritt kopieren*, nachher einfügen.

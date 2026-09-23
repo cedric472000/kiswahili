@@ -92,6 +92,14 @@ pruefe(/serviceWorker/.test(html), "index.html registriert den Service Worker ni
 pruefe(/apple-mobile-web-app-title/.test(html), "apple-mobile-web-app-title fehlt (Name unter dem Icon).");
 pruefe(existiert("icons/apple-touch-icon.png"), "icons/apple-touch-icon.png fehlt.");
 
+// Zwei Fallen, die schon einmal zugeschnappt sind:
+pruefe(/cache: ?["']reload["']/.test(sw),
+       "sw.js holt die Dateien beim Installieren ohne cache:\"reload\" — dann legt der neue " +
+       "Worker die alten Dateien aus dem HTTP-Cache ab und kein Update kommt je an.");
+pruefe(/controllerchange/.test(html),
+       "index.html lädt nach dem Wechsel auf einen neuen Worker nicht neu — neue Inhalte " +
+       "erschienen erst beim übernächsten Öffnen.");
+
 // Das Artefakt darf den Worker nicht registrieren — dort ist er gesperrt.
 var artefakt = read(BASE + "artifact.html");
 pruefe(!/serviceWorker/.test(artefakt),

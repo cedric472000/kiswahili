@@ -67,6 +67,19 @@
 (function () {
   if (!("serviceWorker" in navigator)) return;
   if (location.protocol !== "http:" && location.protocol !== "https:") return;
+
+  /* Übernimmt ein neuer Service Worker die Seite, stammen die gerade
+     geladenen Skripte noch vom alten. Einmal neu laden holt die neue
+     Fassung sofort — sonst sähe man sie erst beim übernächsten Öffnen.
+     Beim allerersten Besuch (vorher kein Controller) passiert nichts. */
+  var hatteController = !!navigator.serviceWorker.controller;
+  var schonNeugeladen = false;
+  navigator.serviceWorker.addEventListener("controllerchange", function () {
+    if (!hatteController || schonNeugeladen) return;
+    schonNeugeladen = true;
+    location.reload();
+  });
+
   window.addEventListener("load", function () {
     navigator.serviceWorker.register("sw.js").catch(function () { /* egal */ });
   });

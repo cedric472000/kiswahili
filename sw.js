@@ -15,7 +15,7 @@
    DATEIEN muss zu dem passen, was index.html laedt — test/test-pwa.js
    prueft genau das.                                                        */
 
-var VERSION = "kiswahili-v2";
+var VERSION = "kiswahili-v3";
 
 var DATEIEN = [
   "./",
@@ -39,9 +39,18 @@ var DATEIEN = [
 
 self.addEventListener("install", function (e) {
   e.waitUntil(
-    caches.open(VERSION)
-      .then(function (cache) { return cache.addAll(DATEIEN); })
-      .then(function () { return self.skipWaiting(); })
+    caches.open(VERSION).then(function (cache) {
+      /* Bewusst nicht cache.addAll(): Das geht durch den HTTP-Cache des
+         Browsers. GitHub Pages liefert mit max-age, also legte der neue
+         Worker exakt die alten Dateien wieder ab — ein Update kam nie an.
+         cache:"reload" erzwingt den Weg zum Server. */
+      return Promise.all(DATEIEN.map(function (pfad) {
+        return fetch(new Request(pfad, { cache: "reload" })).then(function (res) {
+          if (!res || !res.ok) throw new Error("Nicht ladbar: " + pfad);
+          return cache.put(pfad, res);
+        });
+      }));
+    }).then(function () { return self.skipWaiting(); })
   );
 });
 

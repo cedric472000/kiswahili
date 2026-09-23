@@ -252,6 +252,7 @@
     var html =
       '<div class="gate">' +
         '<div class="gate-card">' +
+          '<div class="gate-twiga">' + KS.twiga.figur(92) + "</div>" +
           brandHtml() +
           '<p class="gate-sub">Karibu! Wer lernt gerade?</p>' +
           '<div class="gate-list">' +
@@ -327,7 +328,7 @@
     app.innerHTML =
       '<section class="hero">' +
         '<div class="hero-head">' +
-          '<div class="mw-avatar">A</div>' +
+          '<div class="mw-avatar">' + KS.twiga.kopf(44) + "</div>" +
           "<div><div class='hero-hello'>Habari, " + esc(p.name) + "!</div>" +
           "<div class='hero-where'>" + esc(KS.mwalimu.name) + " · " + esc(KS.mwalimu.where) +
           "</div></div>" +
@@ -584,7 +585,7 @@
     }
 
     function amaniSays(text) {
-      return '<div class="mwalimu-line"><div class="mw-avatar sm">A</div>' +
+      return '<div class="mwalimu-line"><div class="mw-avatar sm">' + KS.twiga.kopf(30) + "</div>" +
              "<div>" + text + "</div></div>";
     }
 
@@ -606,7 +607,7 @@
       if (s.kind === "intro") {
         app.innerHTML = frame(
           '<div class="mwalimu-card">' +
-            '<div class="mw-avatar">A</div><div>' +
+            '<div class="mw-avatar">' + KS.twiga.kopf(44) + "</div><div>" +
               '<div class="mw-name">' + esc(KS.mwalimu.name) + "</div>" +
               '<div class="mw-where">' + esc(KS.mwalimu.where) + "</div>" +
               l.mwalimu.map(function (m) {
@@ -660,7 +661,7 @@
       } else if (s.kind === "practiceIntro") {
         app.innerHTML = frame(
           '<div class="mwalimu-card">' +
-            '<div class="mw-avatar">A</div><div>' +
+            '<div class="mw-avatar">' + KS.twiga.kopf(44) + "</div><div>" +
               '<p class="mw-text">Jetzt üben wir zusammen. Ich sage dir bei jeder Aufgabe, ' +
               'worauf du achten musst, und zeige dir die Bausteine.</p>' +
               '<p class="mw-text"><b>Das hier zählt noch nicht.</b> Rate ruhig, schau dir die ' +
@@ -716,7 +717,7 @@
       } else if (s.kind === "quizIntro") {
         app.innerHTML = frame(
           '<div class="mwalimu-card">' +
-            '<div class="mw-avatar">A</div><div>' +
+            '<div class="mw-avatar">' + KS.twiga.kopf(44) + "</div><div>" +
               '<p class="mw-text">Gut. Jetzt probierst du es allein — ' + s.count +
               " Aufgaben, und ab hier wird gezählt.</p>" +
               '<p class="mw-text">Falls etwas hakt: Über „Ganze Lektion als Text“ oben kannst ' +
@@ -808,6 +809,7 @@
           '<div class="crumbs"><a href="#/lessons">' + ic("book", 16) + "Alle Lektionen</a>" +
           '<a href="#/lesson/' + l.id + '/text">' + ic("list", 16) + "Ganze Lektion als Text</a></div>" +
           '<div class="result big">' +
+            '<div class="twiga-gross">' + KS.twiga.figur(80) + "</div>" +
             '<div class="praise">' + esc(lob.sw) + "</div>" +
             '<div class="scorebig' + lob.stufe + '">' + score + "%</div>" +
             "<h1>" + esc(lob.de) + " " + correct + " von " + quizTotal + " richtig.</h1>" +
@@ -843,7 +845,7 @@
       pageHead(l.title, l.goal + " — Lesefassung zum Nachschlagen und Wiederholen, ohne Übungen.") +
 
       '<div class="mwalimu-card">' +
-        '<div class="mw-avatar">A</div><div>' +
+        '<div class="mw-avatar">' + KS.twiga.kopf(44) + "</div><div>" +
         l.mwalimu.map(function (m) {
           return m.sw ? '<p class="mw-sw">„' + esc(m.sw) + "“<br>" +
                         '<span class="mw-de">' + esc(m.de) + "</span></p>"
@@ -992,6 +994,7 @@
         focusAus();
         app.innerHTML =
           '<div class="result big">' +
+            '<div class="twiga-gross">' + KS.twiga.figur(80) + "</div>" +
             '<div class="praise">' + (richtigErstversuch === gesamt ? "Hongera!" : "Vizuri!") + "</div>" +
             "<h1>" + richtigErstversuch + " von " + gesamt + " gleich beim ersten Versuch</h1>" +
             "<p>" + (richtigErstversuch === gesamt
@@ -1611,6 +1614,7 @@
   /* ------------------------------------------------------------------ */
   function boot() {
     themeAnwenden();
+    KS.twiga.einbauen();   /* Zeichnung einmal ins Dokument, davor zeigen alle <use> ins Leere */
     KS.store.load();
     if (!KS.store.profile()) { renderProfileGate(); return; }
     renderShell();

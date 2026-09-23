@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twiga — Musterblatt</title>
+<style>
+/* Musterblatt fuer das Maskottchen: eine Massai-Giraffe (die Unterart,
+   die in Tansania lebt), gezeichnet als Maskottchen — vorn ansichtig,
+   grosse Augen, runde Volumen, weiche Schattierung.
+
+   Zwei Grundsaetze:
+   1. Der Koerper ist EINE durchgehende Silhouette. Hals, Rumpf und Beine
+      in einem Zug; nur der Kopf legt sich als eigene Form davor. Aus
+      Strichen und Klecksen zusammengesetzt zerfaellt die Figur sonst in
+      lauter Einzelteile.
+   2. Das Volumen kommt aus EINEM Verlauf (#volumen), der ueber die ganze
+      Silhouette gelegt wird: weiss oben links, schwarz unten rechts,
+      beides halbtransparent. So stimmt die Plastizitaet in hell und
+      dunkel, ohne zwei Farbsaetze. */
+:root {
+  --ink:#101828; --ink-2:#4A5566; --ink-3:#8492A3;
+  --bg:#F6F7F9; --surface:#FFFFFF; --line:#E4E8ED; --surface-2:#F0F2F5;
+  --accent:#0E7C6B; --accent-2:#E0683F;
+  /* Die Schnauze nur wenig heller als das Fell — zu hell wirkt sie
+     wie eine aufgeklebte Flaeche statt wie ein Teil des Kopfes. */
+  --coat:#EBBC80; --muzzle:#F2D3A6; --patch:#8A5223; --mane:#6B3F19; --hoof:#553211;
+}
+.dunkel {
+  --ink:#E8EEF4; --ink-2:#A6B2C1; --ink-3:#78848F;
+  --bg:#0C1015; --surface:#151A21; --line:#272E37; --surface-2:#1D232B;
+  --accent:#2FBFA6; --accent-2:#FF8A66;
+  --coat:#D5A76A; --muzzle:#DEBB8B; --patch:#77461D; --mane:#5A3414; --hoof:#472B0E;
+}
+* { box-sizing:border-box; }
+body { margin:0; font:15px/1.6 system-ui,"Segoe UI",Roboto,sans-serif; background:#E9ECEF; }
+.seiten { display:grid; grid-template-columns:1fr 1fr; min-height:100vh; }
+@media (max-width:820px){ .seiten{ grid-template-columns:1fr; } }
+.seite { background:var(--bg); color:var(--ink); padding:26px 22px 40px; }
+h1 { font-size:20px; letter-spacing:-.02em; margin:0 0 2px; }
+h2 { font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-3);
+     margin:28px 0 12px; font-weight:650; }
+p.lead { color:var(--ink-2); font-size:13.5px; margin:0 0 10px; }
+.reihe { display:flex; align-items:flex-end; gap:18px; flex-wrap:wrap; }
+.probe { text-align:center; }
+.probe small { display:block; margin-top:6px; font-size:10.5px; color:var(--ink-3); }
+.av { border-radius:50%; display:grid; place-items:center; overflow:hidden; }
+.av.tinte { background:color-mix(in srgb, var(--accent) 12%, var(--surface)); }
+.av.weiss { background:var(--surface); border:1px solid var(--line); }
+.av.voll  { background:var(--accent); }
+.karte { background:var(--surface); border:1px solid var(--line); border-radius:16px;
+         padding:18px; box-shadow:0 1px 2px rgba(16,24,40,.05); }
+.hero { background:linear-gradient(145deg, color-mix(in srgb,var(--accent) 10%,var(--surface)),
+        color-mix(in srgb,var(--accent-2) 7%,var(--surface)));
+        border:1px solid color-mix(in srgb,var(--accent) 20%,var(--line));
+        border-radius:22px; padding:20px; }
+.zeile { display:flex; gap:14px; align-items:center; }
+.name { font-weight:640; font-size:16px; }
+.wo { font-size:12.5px; color:var(--ink-3); }
+.sprech { color:var(--ink-2); font-size:14px; margin:12px 0 0; }
+.fb { margin-top:14px; display:flex; gap:10px; align-items:center;
+      background:#E8F6EF; color:#0F7A50; border-radius:12px; padding:12px 14px; font-size:14px; }
+.dunkel .fb { background:#102A21; color:#35C98A; }
+.figurreihe { display:flex; align-items:flex-end; gap:28px; flex-wrap:wrap; }
+.merkmale { font-size:13px; color:var(--ink-2); margin:0; padding-left:18px; }
+.merkmale li { margin-bottom:4px; }
+</style>
+</head>
+<body>
+
+<!-- ===================== Die Zeichnungen ===================== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Der Volumenverlauf: Licht von oben links, Schatten unten rechts. -->
+    <radialGradient id="volumen" cx="30%" cy="24%" r="85%">
+      <stop offset="0"    stop-color="#FFFFFF" stop-opacity=".34"/>
+      <stop offset=".45"  stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="1"    stop-color="#000000" stop-opacity=".22"/>
+    </radialGradient>
+    <!-- Etwas flacher fuer kleine Teile -->
+    <linearGradient id="volumen-flach" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#FFFFFF" stop-opacity=".22"/>
+      <stop offset=".5"  stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="1"   stop-color="#000000" stop-opacity=".18"/>
+    </linearGradient>
+
+    <!-- Fleckenformen der Massai-Giraffe. Mit Kurven statt Zacken: die
+         Kerben sind da, aber weich — sonst werden daraus Sterne statt
+         Flecken. Fuenf Formen, damit sich beim Verteilen nichts sichtbar
+         wiederholt. Radius rund 5. -->
+    <path id="fleck-a" d="M-4.8,-1.2 C-4.4,-3 -2.6,-3.6 -1.6,-4.4 C-0.4,-5.4 1.6,-4.8 2.4,-3.4
+                          C3.2,-2.2 5,-2 5,-0.4 C5,1 3.5,1.8 3.8,3 C4.1,4.3 2.4,5.3 1,4.8
+                          C-0.4,4.3 -1.2,4.7 -2.4,4.4 C-3.9,4 -4.3,2.6 -3.6,1.4
+                          C-3,0.4 -5.2,0.6 -4.8,-1.2 Z"/>
+    <path id="fleck-b" d="M-4.2,-2.2 C-3.4,-4 -1,-4.6 0.6,-4.2 C2.2,-3.8 3.4,-2.6 4.2,-1.4
+                          C5,-0.2 4.3,1.4 4.6,2.6 C4.9,4 3,4.9 1.6,4.4 C0.2,3.9 -1.6,5 -2.8,4
+                          C-4,3 -3.3,1.4 -3.8,0.2 C-4.3,-1 -4.6,-1.2 -4.2,-2.2 Z"/>
+    <path id="fleck-c" d="M-3.6,-1.4 C-3.4,-3.1 -1.8,-3.9 -0.4,-3.6 C1,-3.3 2.6,-2.8 3.4,-1.6
+                          C4.2,-0.4 3.3,1 3.6,2.2 C3.9,3.5 2,4.1 0.8,3.6 C-0.4,3.1 -2,3.9 -2.8,2.8
+                          C-3.6,1.7 -2.9,0.4 -3.4,-0.6 Z"/>
+    <path id="fleck-d" d="M-4.4,0.4 C-5,-1.4 -3.6,-3.2 -2,-3.8 C-0.4,-4.4 1.2,-5 2.6,-4
+                          C4,-3 4.2,-1.2 4.8,0.2 C5.4,1.6 4.2,3.2 2.8,3.8 C1.4,4.4 0.4,4 -1,4.4
+                          C-2.6,4.9 -3.8,3.6 -3.6,2.2 C-3.5,1.3 -4.1,1.2 -4.4,0.4 Z"/>
+    <path id="fleck-e" d="M-3,-3.4 C-1.6,-4.6 1,-4.8 2.4,-3.6 C3.8,-2.4 3.6,-0.8 4.4,0.6
+                          C5.2,2 4,3.6 2.4,4 C0.8,4.4 -0.6,3.6 -2,3.8 C-3.6,4 -4.6,2.6 -4.2,1.2
+                          C-3.8,-0.2 -4.4,-2.2 -3,-3.4 Z"/>
+
+    <!-- Kopfform, auch als Beschneidung fuer Schatten und Flecken -->
+    <path id="kopf-form" d="M50 17 C66 17 75 28 75 42 C75 53 73 61 70 68
+                            C67 76 59 81 50 81 C41 81 33 76 30 68
+                            C27 61 25 53 25 42 C25 28 34 17 50 17 Z"/>
+    <clipPath id="kopf-clip"><use href="#kopf-form"/></clipPath>
+
+    <!-- Koerper in einem Zug: vom Halsansatz links hinunter ueber die
+         Flanke, durch das linke Bein, zwischen den Beinen hindurch,
+         durch das rechte Bein und die andere Flanke wieder hinauf. -->
+    <!-- Schlanker Rumpf, langer Hals, lange Beine: der Rumpf ist nur
+         etwa so breit wie der Hals lang ist, nicht so breit wie hoch. -->
+    <path id="koerper-form"
+          d="M46 30
+             C42 60, 38 80, 35 98
+             C27 105, 26 122, 33 134
+             L32 176
+             A 6.5 6.5 0 0 0 45 176
+             L45 138
+             C49 133, 55 133, 59 138
+             L59 176
+             A 6.5 6.5 0 0 0 72 176
+             L71 134
+             C78 122, 77 105, 69 98
+             C66 80, 62 60, 60 30
+             Z"/>
+    <clipPath id="koerper-clip"><use href="#koerper-form"/></clipPath>
+
+    <!-- ============ Der Kopf, vorn ansichtig ============
+         Einmal gezeichnet, in Brustbild und Figur wiederverwendet. -->
+    <g id="kopf-gruppe">
+      <!-- Der ganze Kopf leicht geneigt. Die Symmetrie zu brechen ist der
+           wirksamste Griff, damit eine Figur lebendig statt gestellt wirkt. -->
+      <g transform="rotate(-7 50 50)">
+        <!-- Ohren, verschieden gestellt: eins aufmerksam nach oben,
+             eins entspannt zur Seite -->
+        <g>
+          <ellipse cx="17" cy="44" rx="14" ry="7.6" transform="rotate(-32 17 44)" fill="var(--coat)"/>
+          <ellipse cx="17" cy="44" rx="14" ry="7.6" transform="rotate(-32 17 44)" fill="url(#volumen-flach)"/>
+          <ellipse cx="18.5" cy="44.5" rx="8" ry="3.6" transform="rotate(-32 18.5 44.5)"
+                   fill="var(--mane)" opacity=".3"/>
+          <ellipse cx="83" cy="47.5" rx="13" ry="7" transform="rotate(13 83 47.5)" fill="var(--coat)"/>
+          <ellipse cx="83" cy="47.5" rx="13" ry="7" transform="rotate(13 83 47.5)" fill="url(#volumen-flach)"/>
+          <ellipse cx="81.5" cy="48" rx="7.4" ry="3.3" transform="rotate(13 81.5 48)"
+                   fill="var(--mane)" opacity=".3"/>
+        </g>
+        <!-- Hoerner, auch sie nicht exakt gleich -->
+        <g>
+          <path d="M39 27 L36.5 14" stroke="var(--coat)" stroke-width="8" stroke-linecap="round"/>
+          <circle cx="36" cy="12" r="6.2" fill="var(--mane)"/>
+          <circle cx="36" cy="12" r="6.2" fill="url(#volumen-flach)"/>
+          <path d="M61 27 L64 15.5" stroke="var(--coat)" stroke-width="8" stroke-linecap="round"/>
+          <circle cx="64.5" cy="13.5" r="5.8" fill="var(--mane)"/>
+          <circle cx="64.5" cy="13.5" r="5.8" fill="url(#volumen-flach)"/>
+        </g>
+        <!-- Schopf zwischen den Hoernern -->
+        <path d="M44 21 C45 13.5 50.5 11.5 52 17 C54 12 58.5 13 57 20 C53 17.5 48 17.5 44 21 Z"
+              fill="var(--mane)"/>
+
+        <!-- Kopf -->
+        <use href="#kopf-form" fill="var(--coat)"/>
+
+        <!-- Flecken auf dem Kopf, innerhalb der Kopfform -->
+        <g clip-path="url(#kopf-clip)" fill="var(--patch)" opacity=".85">
+          <use href="#fleck-a" transform="translate(31,33) rotate(-20) scale(.62)"/>
+          <use href="#fleck-c" transform="translate(69,31) rotate(15) scale(.56)"/>
+          <use href="#fleck-e" transform="translate(50,20) rotate(6) scale(.48)"/>
+        </g>
+
+        <!-- Schnauze: breit und stumpf, unten flacher als oben. Eine reine
+             Ellipse sieht aus wie aufgeklebt; Giraffen haben ein breites,
+             blockiges Maul. -->
+        <path d="M50 53 C62 53, 69 58, 69 66 C69 73, 62.5 79, 50 79
+                 C37.5 79, 31 73, 31 66 C31 58, 38 53, 50 53 Z" fill="var(--muzzle)"/>
+        <path d="M50 53 C62 53, 69 58, 69 66 C69 73, 62.5 79, 50 79
+                 C37.5 79, 31 73, 31 66 C31 58, 38 53, 50 53 Z" fill="url(#volumen-flach)"/>
+
+        <!-- Volumen ueber den ganzen Kopf -->
+        <use href="#kopf-form" fill="url(#volumen)"/>
+
+        <!-- Wangenroete -->
+        <ellipse cx="28" cy="56" rx="6.5" ry="3.8" fill="#E0683F" opacity=".2"/>
+        <ellipse cx="72" cy="56" rx="6.5" ry="3.8" fill="#E0683F" opacity=".2"/>
+
+        <!-- Feine Kante, wo die Schnauze aus dem Gesicht tritt -->
+        <path d="M33 62 C39 55.5, 61 55.5, 67 62" stroke="#000000" stroke-width="2.4"
+              stroke-linecap="round" fill="none" opacity=".055"/>
+
+        <!-- Nuestern: schraege Schlitze statt runder Punkte. Rund wirkt
+             wie zwei Loecher, schraeg wie eine Nase. -->
+        <ellipse cx="42.6" cy="63.5" rx="3.4" ry="1.9" transform="rotate(-30 42.6 63.5)"
+                 fill="var(--mane)" opacity=".6"/>
+        <ellipse cx="57.4" cy="63.5" rx="3.4" ry="1.9" transform="rotate(30 57.4 63.5)"
+                 fill="var(--mane)" opacity=".6"/>
+
+        <!-- Maul: Rinne von der Nase herunter, dann zwei Boegen nach aussen.
+             So haengt ein Tiermaul zusammen, statt als Bogen zu schweben. -->
+        <g stroke="var(--mane)" stroke-width="2.3" stroke-linecap="round"
+           stroke-linejoin="round" fill="none" opacity=".6">
+          <path d="M50 65.8 L50 70.5"/>
+          <path d="M50 70.5 C50 75.2, 45.4 76.6, 41.6 73.4"/>
+          <path d="M50 70.5 C50 75.2, 54.6 76.6, 58.4 73.4"/>
+        </g>
+
+        <!-- Augen: gross, das wichtigste Merkmal eines Maskottchens.
+             Die Pupillen sitzen leicht seitlich — das ist ein Blick,
+             kein Starren. -->
+        <ellipse cx="38" cy="41" rx="10" ry="11" fill="#FFFFFF"/>
+        <ellipse cx="62" cy="41" rx="10" ry="11" fill="#FFFFFF"/>
+        <circle cx="40.2" cy="42.4" r="6.2" fill="#2A1A0C"/>
+        <circle cx="62" cy="42.4" r="6.2" fill="#2A1A0C"/>
+        <circle cx="38.1" cy="39.8" r="2.4" fill="#FFFFFF"/>
+        <circle cx="59.9" cy="39.8" r="2.4" fill="#FFFFFF"/>
+        <circle cx="42.6" cy="45.6" r="1.2" fill="#FFFFFF" opacity=".65"/>
+        <circle cx="64.4" cy="45.6" r="1.2" fill="#FFFFFF" opacity=".65"/>
+
+        <!-- Brauen, die eine hoeher als die andere: neugierig statt neutral -->
+        <path d="M30.5 28 Q37.5 23.5 44.5 27" stroke="var(--mane)" stroke-width="2.8"
+              stroke-linecap="round" fill="none" opacity=".7"/>
+        <path d="M55.5 25.5 Q62.5 21 69.5 25" stroke="var(--mane)" stroke-width="2.8"
+              stroke-linecap="round" fill="none" opacity=".7"/>
+      </g>
+    </g>
+
+    <!-- ============ Brustbild: Kopf mit Hals ============ -->
+    <clipPath id="hals-clip">
+      <path d="M37 60 C35 82 33 94 33 112 L67 112 C67 94 65 82 63 60 Z"/>
+    </clipPath>
+    <g id="twiga-brust">
+      <path d="M37 60 C35 82 33 94 33 112 L67 112 C67 94 65 82 63 60 Z" fill="var(--coat)"/>
+      <g clip-path="url(#hals-clip)" fill="var(--patch)" opacity=".85">
+        <use href="#fleck-a" transform="translate(41,92) rotate(-12) scale(.78)"/>
+        <use href="#fleck-b" transform="translate(59,100) rotate(10) scale(.72)"/>
+        <use href="#fleck-c" transform="translate(44,108) rotate(4) scale(.66)"/>
+      </g>
+      <path d="M37 60 C35 82 33 94 33 112 L67 112 C67 94 65 82 63 60 Z" fill="url(#volumen-flach)"/>
+      <!-- Schlagschatten des Kopfes auf dem Hals -->
+      <ellipse cx="50" cy="74" rx="20" ry="10" fill="#000000" opacity=".14"/>
+      <use href="#kopf-gruppe"/>
+    </g>
+  </defs>
+
+  <symbol id="twiga-kopf"  viewBox="0 0 100 112"><use href="#twiga-brust"/></symbol>
+  <!-- Enger Ausschnitt fuer kleine Groessen: nur der Kopf, er fuellt
+       den Kreis. Gleiche Zeichnung, anderer Rahmen. -->
+  <symbol id="twiga-klein" viewBox="4 2 92 92"><use href="#twiga-brust"/></symbol>
+
+  <!-- ============ Ganze Figur ============ -->
+  <symbol id="twiga-figur" viewBox="0 0 110 196">
+    <!-- Bodenschatten -->
+    <ellipse cx="52" cy="186" rx="33" ry="6" fill="#000000" opacity=".12"/>
+    <!-- Schwanz, hinter der Silhouette -->
+    <path d="M30 110 C19 114 15 128 25 139" stroke="var(--coat)" stroke-width="4.5"
+          stroke-linecap="round" fill="none"/>
+    <circle cx="25.5" cy="140" r="4.2" fill="var(--mane)"/>
+
+    <!-- Der Koerper: eine einzige Form -->
+    <use href="#koerper-form" fill="var(--coat)"/>
+    <!-- Flecken, in die Silhouette geschnitten. Dicht gesetzt mit schmalen
+         hellen Gassen dazwischen — so sitzt die Zeichnung beim echten Tier. -->
+    <g clip-path="url(#koerper-clip)" fill="var(--patch)" opacity=".88">
+      <use href="#fleck-c" transform="translate(53,42) rotate(10) scale(.5)"/>
+      <use href="#fleck-e" transform="translate(47,56) rotate(-8) scale(.58)"/>
+      <use href="#fleck-a" transform="translate(56,60) rotate(14) scale(.5)"/>
+      <use href="#fleck-d" transform="translate(44,72) rotate(6) scale(.64)"/>
+      <use href="#fleck-b" transform="translate(57,76) rotate(-12) scale(.56)"/>
+      <use href="#fleck-c" transform="translate(47,88) rotate(-4) scale(.68)"/>
+      <use href="#fleck-e" transform="translate(61,90) rotate(9) scale(.6)"/>
+      <use href="#fleck-a" transform="translate(36,106) rotate(-6) scale(.95)"/>
+      <use href="#fleck-d" transform="translate(51,102) rotate(12) scale(1.05)"/>
+      <use href="#fleck-b" transform="translate(65,107) rotate(-9) scale(1)"/>
+      <use href="#fleck-e" transform="translate(74,118) rotate(5) scale(.88)"/>
+      <use href="#fleck-c" transform="translate(33,121) rotate(-14) scale(.85)"/>
+      <use href="#fleck-a" transform="translate(47,120) rotate(7) scale(1)"/>
+      <use href="#fleck-d" transform="translate(61,124) rotate(-6) scale(.92)"/>
+      <use href="#fleck-b" transform="translate(40,134) rotate(11) scale(.8)"/>
+      <use href="#fleck-e" transform="translate(56,135) rotate(-10) scale(.76)"/>
+      <use href="#fleck-c" transform="translate(38,148) rotate(4) scale(.55)"/>
+      <use href="#fleck-a" transform="translate(65,150) rotate(-7) scale(.55)"/>
+      <use href="#fleck-d" transform="translate(37,163) rotate(9) scale(.48)"/>
+      <use href="#fleck-b" transform="translate(66,165) rotate(-5) scale(.48)"/>
+    </g>
+    <!-- Hufe, ebenfalls in die Silhouette geschnitten -->
+    <g clip-path="url(#koerper-clip)" fill="var(--hoof)">
+      <rect x="28" y="172" width="20" height="14"/>
+      <rect x="55" y="172" width="20" height="14"/>
+    </g>
+    <!-- Volumen ueber die ganze Silhouette -->
+    <use href="#koerper-form" fill="url(#volumen)"/>
+    <!-- Kopf, dieselbe Zeichnung wie im Brustbild -->
+    <use href="#kopf-gruppe" transform="translate(23,1) scale(.60)"/>
+  </symbol>
+</svg>
+
+<div class="seiten">
+
+  <!-- ===================== HELL ===================== -->
+  <div class="seite">
+    <h1>Twiga — Musterblatt</h1>
+    <p class="lead">Hell · ganze Figur in einer Silhouette</p>
+
+    <h2>Gesicht groß</h2>
+    <div class="reihe">
+      <div class="probe">
+        <div class="av tinte" style="width:230px;height:230px"><svg width="230" height="230"><use href="#twiga-klein"/></svg></div>
+        <small>230 px</small>
+      </div>
+    </div>
+
+    <h2>Ganze Figur</h2>
+    <div class="figurreihe">
+      <div class="probe"><svg width="150" height="267"><use href="#twiga-figur"/></svg><small>150 px breit</small></div>
+      <div class="probe"><svg width="95" height="169"><use href="#twiga-figur"/></svg><small>95 px</small></div>
+      <div class="probe"><svg width="58" height="103"><use href="#twiga-figur"/></svg><small>58 px</small></div>
+    </div>
+
+    <h2>Avatar im Kreis</h2>
+    <div class="reihe">
+      <div class="probe">
+        <div class="av tinte" style="width:96px;height:96px"><svg width="96" height="96"><use href="#twiga-klein"/></svg></div>
+        <small>96 px</small>
+      </div>
+      <div class="probe">
+        <div class="av tinte" style="width:64px;height:64px"><svg width="64" height="64"><use href="#twiga-klein"/></svg></div>
+        <small>64 px</small>
+      </div>
+      <div class="probe">
+        <div class="av tinte" style="width:44px;height:44px"><svg width="44" height="44"><use href="#twiga-klein"/></svg></div>
+        <small>44 px — Amani</small>
+      </div>
+      <div class="probe">
+        <div class="av tinte" style="width:30px;height:30px"><svg width="30" height="30"><use href="#twiga-klein"/></svg></div>
+        <small>30 px</small>
+      </div>
+      <div class="probe">
+        <div class="av tinte" style="width:24px;height:24px"><svg width="24" height="24"><use href="#twiga-klein"/></svg></div>
+        <small>24 px</small>
+      </div>
+    </div>
+
+    <h2>Brustbild gegen Kopf</h2>
+    <div class="reihe">
+      <div class="probe">
+        <div class="av tinte" style="width:72px;height:72px"><svg width="72" height="72"><use href="#twiga-kopf"/></svg></div>
+        <small>mit Hals</small>
+      </div>
+      <div class="probe">
+        <div class="av tinte" style="width:72px;height:72px"><svg width="72" height="72"><use href="#twiga-klein"/></svg></div>
+        <small>nur Kopf</small>
+      </div>
+      <div class="probe">
+        <div class="av weiss" style="width:72px;height:72px"><svg width="72" height="72"><use href="#twiga-klein"/></svg></div>
+        <small>weiß + Linie</small>
+      </div>
+      <div class="probe">
+        <div class="av voll" style="width:72px;height:72px"><svg width="72" height="72"><use href="#twiga-klein"/></svg></div>
+        <small>Petrol voll</small>
+      </div>
+    </div>
+
+    <h2>Was sich geändert hat</h2>
+    <ul class="merkmale">
+      <li>Hals, Rumpf und Beine sind <b>eine</b> Kontur, kein Baukasten aus Strichen</li>
+      <li>der Verlauf läuft über die ganze Silhouette — dadurch wirkt sie als ein Körper</li>
+      <li>Flecken und Hufe sind in die Kontur geschnitten, nichts steht über</li>
+      <li>nur der Kopf ist eine eigene Form, die sich davorlegt</li>
+      <li>Vorderansicht: die Hinterbeine stehen hinter den vorderen und entfallen</li>
+    </ul>
+
+    <h2>Im Einsatz</h2>
+    <div class="hero">
+      <div class="zeile">
+        <div class="av tinte" style="width:48px;height:48px;flex:0 0 48px"><svg width="48" height="48"><use href="#twiga-klein"/></svg></div>
+        <div>
+          <div class="name">Habari, Cedric!</div>
+          <div class="wo">Mwalimu Amani · Kariakoo, Dar es Salaam</div>
+        </div>
+      </div>
+      <p class="sprech">Karibu tena. 16 Wörter warten auf ihre Wiederholung. Tuanze — fangen wir an.</p>
+    </div>
+    <div class="karte" style="margin-top:12px">
+      <div class="zeile">
+        <div class="av tinte" style="width:30px;height:30px;flex:0 0 30px"><svg width="30" height="30"><use href="#twiga-klein"/></svg></div>
+        <div style="font-size:14px;color:var(--ink-2)">Lies das in Ruhe. Wir üben es gleich zusammen.</div>
+      </div>
+      <div class="fb">
+        <svg width="26" height="26"><use href="#twiga-klein"/></svg>
+        <span><b>Sahihi!</b> Genau so.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== DUNKEL ===================== -->
+  <div class="seite dunkel">
+    <h1>Twiga — Musterblatt</h1>
+    <p class="lead">Dunkel · ganze Figur in einer Silhouette</p>
+
+    <h2>Ganze Figur</h2>
+    <div class="figurreihe">
+      <div class="probe"><svg width="150" height="267"><use href="#twiga-figur"/></svg><small>150 px breit</small></div>
+      <div class="probe"><svg width="95" height="169"><use href="#twiga-figur"/></svg><small>95 px</small></div>
+      <div class="probe"><svg width="58" height="103"><use href="#twiga-figur"/></svg><small>58 px</small></div>
+    </div>
+
+    <h2>Avatar im Kreis</h2>
+    <div class="reihe">
+      <div class="probe">
+        <div class="av tinte" style="width:96px;height:96px"><svg width="96" height="96"><use href="#twiga-klein"/></svg></div>
+        <small>96 px</small>
+      </div>
+      <div class="probe">
+        <div class="av tinte" style="width:64px;height:64px"><svg width="64" height="64"><use href="#twiga-klein"/></svg></div>
+        <small>64 px</small>
+      </div>
+      <div class="probe">
+        <div class="av tinte" style="width:44px;height:44px"><svg width="44" height="44"><use href="#twiga-klein"/></svg></div>
+        <small>44 px — Amani</small>
+      </div>
+      <div class="probe">
+        <div class="av tinte" style="width:30px;height:30px"><svg width="30" height="30"><use href="#twiga-klein"/></svg></div>
+        <small>30 px</small>
+      </div>
+      <div class="probe">
+        <div class="av tinte" style="width:24px;height:24px"><svg width="24" height="24"><use href="#twiga-klein"/></svg></div>
+        <small>24 px</small>
+      </div>
+    </div>
+
+    <h2>Im Einsatz</h2>
+    <div class="hero">
+      <div class="zeile">
+        <div class="av tinte" style="width:48px;height:48px;flex:0 0 48px"><svg width="48" height="48"><use href="#twiga-klein"/></svg></div>
+        <div>
+          <div class="name">Habari, Cedric!</div>
+          <div class="wo">Mwalimu Amani · Kariakoo, Dar es Salaam</div>
+        </div>
+      </div>
+      <p class="sprech">Karibu tena. 16 Wörter warten auf ihre Wiederholung. Tuanze — fangen wir an.</p>
+    </div>
+    <div class="karte" style="margin-top:12px">
+      <div class="zeile">
+        <div class="av tinte" style="width:30px;height:30px;flex:0 0 30px"><svg width="30" height="30"><use href="#twiga-klein"/></svg></div>
+        <div style="font-size:14px;color:var(--ink-2)">Lies das in Ruhe. Wir üben es gleich zusammen.</div>
+      </div>
+      <div class="fb">
+        <svg width="26" height="26"><use href="#twiga-klein"/></svg>
+        <span><b>Sahihi!</b> Genau so.</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

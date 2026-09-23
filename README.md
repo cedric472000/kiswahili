@@ -156,6 +156,44 @@ und einem weißen **K**, daneben *Ki**swahili***. Die frühere Zeile
 *Dar es Salaam 2027* darunter ist weg — es geht um die Sprache, nicht um
 den Umzugstermin.
 
+### Das Maskottchen: Twiga
+
+Mwalimu Amani ist eine **Massai-Giraffe** — Tansanias Nationaltier und die
+Unterart, die dort lebt. Sie steckt in `js/twiga.js`: die Zeichnung liegt
+einmal als unsichtbares `<svg>` im Dokument und wird überall per `<use>`
+geholt, statt bei jedem Avatar neu im Markup zu stehen.
+
+| Aufruf | Ergebnis |
+|---|---|
+| `KS.twiga.kopf(px)` | Kopf im Quadrat — für das Avatar-Rund (44 px, klein 30 px) |
+| `KS.twiga.brustbild(px)` | Kopf mit Hals, hochkant |
+| `KS.twiga.figur(px)` | ganze Figur — Ergebnisseiten, Profilauswahl |
+| `KS.twiga.einbauen()` | legt die Zeichnung ins Dokument; einmal vor der ersten Ansicht, erledigt `boot()` |
+
+Fünf Regeln, an denen die Zeichnung hängt — wer sie ändert, sollte sie kennen:
+
+1. **Eine Kontur.** Hals, Rumpf und Beine sind ein einziger Pfad. Aus
+   Strichen und Klecksen zusammengesetzt zerfällt die Figur optisch in
+   Einzelteile — genau daran ist die erste Fassung gescheitert.
+2. **Volumen aus einem Verlauf.** Weiß oben links, schwarz unten rechts,
+   beides halbdurchsichtig, über die ganze Form gelegt. Das wirkt in hell
+   und dunkel, ohne zwei Farbsätze zu pflegen.
+3. **Massai, nicht Netzgiraffe.** Flecken eingekerbt und unregelmäßig, aus
+   Kurven statt Geraden (mit Geraden werden daraus Sterne), fünf Formen
+   gegen sichtbare Wiederholung, dicht gesetzt mit schmalen hellen Gassen,
+   und bis auf die Beine hinunter.
+4. **Keine Symmetrie.** Kopf geneigt, Ohren verschieden gestellt, eine
+   Braue höher, Blick leicht seitlich. Exakte Spiegelung wirkt gestellt.
+5. **Das Maul hängt an der Nase.** Rinne von der Nase herunter, dann zwei
+   Bögen nach außen. Ein freischwebender Bogen darunter liest sich als
+   Lächeln, nicht als Schnauze — und die Nüstern sind schräge Schlitze,
+   keine runden Punkte.
+
+Die Fellfarben stehen als `--tw-*` in `css/style.css`, je einmal hell und
+dunkel. `design/twiga.html` ist das Musterblatt: alle Größen nebeneinander,
+hell und dunkel, zum Öffnen im Browser. Es gehört nicht zur App und wird
+auch nicht mit ausgeliefert.
+
 **Keine harten Konturen.** Frühere Fassungen hatten schwarze Umrisse und
 versetzte Schatten, angelehnt an die Tingatinga-Malerei aus Dar es Salaam.
 Das war zu grell — die Kombination aus Schwarz, Gelb und Orange erinnerte
@@ -399,11 +437,13 @@ data/lernfolge.js   Alltagswortschatz: Reihenfolge neuer Vokabeln
 js/storage.js       localStorage, Profile, Export/Import
 js/srs.js           Leitner-Algorithmus, Antwortprüfung
 js/conjugator.js    Verbformen bauen und in Morpheme zerlegen
+js/twiga.js         Mwalimu Amani als Massai-Giraffe (SVG-Zeichnung)
 js/app.js           Router und alle Ansichten
 manifest.webmanifest  Installierbarkeit: Name, Icons, Farben
 sw.js               Service Worker: Offline-Cache
 icons/              App-Icons (192, 512, apple-touch-icon)
 test/               Prüfskripte (siehe oben)
+design/twiga.html   Musterblatt des Maskottchens, nicht Teil der App
 ```
 
 Bewusst **ohne ES-Module** geschrieben, damit die Seite auch direkt aus dem

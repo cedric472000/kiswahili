@@ -364,7 +364,7 @@
           : '<a class="tcard" href="#/lessons">' +
               '<span class="lnum done">' + ic("check", 20) + "</span>" +
               "<div><div class='tcard-lab'>Kurs</div>" +
-              "<div class='tcard-title'>Alle zwölf Lektionen geschafft</div>" +
+              "<div class='tcard-title'>Alle " + KS.lessons.length + " Lektionen geschafft</div>" +
               "<div class='tcard-sub'>Hongera sana! Zeit zum Wiederholen.</div></div>" +
               '<span class="arrow">' + ic("arrow", 20) + "</span></a>") +
       "</div>" +
@@ -400,12 +400,16 @@
   /* ------------------------------------------------------------------ */
   /* Lektionsübersicht                                                   */
   /* ------------------------------------------------------------------ */
-  /* Die zwölf Lektionen in drei Abschnitten — ein Kurs mit Kapiteln
-     liest sich leichter als eine Liste aus zwölf gleichen Zeilen. */
+  /* Der Kurs in sechs Abschnitten — ein Kurs mit Kapiteln liest sich
+     leichter als eine Liste aus vierundzwanzig gleichen Zeilen.
+     bis = letzte Lektionsnummer des Abschnitts (1-basiert). */
   var LEKTIONSGRUPPEN = [
-    { bis: 3,  name: "Erste Worte",   hinweis: "Grüßen, sich vorstellen, Nomenklassen" },
-    { bis: 7,  name: "Das Verb",      hinweis: "Baukasten, Verneinung, Zeitformen" },
-    { bis: 99, name: "Alltag in Dar", hinweis: "Adjektive, Besitz, Zahlen, Uhrzeit, Orte" }
+    { bis: 3,  name: "Erste Worte",        hinweis: "Grüßen, sich vorstellen, Nomenklassen" },
+    { bis: 7,  name: "Das Verb",           hinweis: "Baukasten, Verneinung, Zeitformen" },
+    { bis: 12, name: "Alltag in Dar",      hinweis: "Adjektive, Besitz, Zahlen, Uhrzeit, Orte" },
+    { bis: 16, name: "Verberweiterungen",  hinweis: "Für jemanden, Passiv, veranlassen, einander" },
+    { bis: 20, name: "Sätze verbinden",    hinweis: "Relativsätze, Bedingungen, das Unwirkliche" },
+    { bis: 99, name: "Draußen in Dar",     hinweis: "Arzt, Wohnen, Behörden, unterwegs" }
   ];
   function gruppeVon(i) {
     for (var g = 0; g < LEKTIONSGRUPPEN.length; g++) {
@@ -439,8 +443,9 @@
 
     app.innerHTML =
       pageHead("Lektionen",
-        "Zwölf Schritte durch das Grundgerüst. Jede Lektion läuft Seite für Seite ab: " +
-        "Amani erklärt, zeigt die Wörter, übt mit dir — und erst ganz zum Schluss kommt die Abfrage.") +
+        "Der ganze Kurs in " + KS.lessons.length + " Schritten — vom Gruß bis zum Nebensatz. " +
+        "Jede Lektion läuft Seite für Seite ab: Amani erklärt, zeigt die Wörter, übt mit dir — " +
+        "und erst ganz zum Schluss kommt die Abfrage.") +
       '<div class="coursebar">' + ringHtml(pct, pct + "%", "") +
         '<div class="cb-text"><b>' + done + " von " + KS.lessons.length + " Lektionen</b>" +
         "<small>" + (offen < 0 ? "Kurs abgeschlossen — hongera sana!"

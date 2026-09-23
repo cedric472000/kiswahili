@@ -378,7 +378,90 @@ KS.vocab = [
   { sw:"mto",     pl:"mito", cls:"3/4", de:"Fluss, Kissen", topic:"asili" },
   { sw:"ziwa",    pl:"maziwa", cls:"5/6", de:"See", topic:"asili" },
   { sw:"nchi",    cls:"9/10", de:"Land, Staat", topic:"asili", note:"Tanzania ni nchi nzuri." },
-  { sw:"dunia",   cls:"9/10", de:"Welt, Erde", topic:"asili" }
+  { sw:"dunia",   cls:"9/10", de:"Welt, Erde", topic:"asili" },
+
+  /* ---------- Verberweiterungen (Lektionen 13–16) ----------
+     Abgeleitete Verben sind eigene Wörter, keine Grammatikübung — man
+     schlägt sie im Wörterbuch nach. Deshalb stehen sie hier.
+
+     Anwendungsform -ia/-ea: für wen oder wozu */
+  { sw:"kupikia",     de:"für jemanden kochen", topic:"vitenzi", note:"kupika + -ia" },
+  { sw:"kuletea",     de:"jemandem bringen", topic:"vitenzi", note:"kuleta + -ea — Vokal vor dem End-a ist e" },
+  { sw:"kununulia",   de:"für jemanden kaufen", topic:"vitenzi", note:"Stamm endet auf Vokal, darum -lia" },
+  { sw:"kuandikia",   de:"jemandem schreiben", topic:"vitenzi", note:"kuandika + -ia" },
+  { sw:"kuuzia",      de:"an jemanden verkaufen", topic:"vitenzi", note:"kuuza + -ia" },
+  { sw:"kulipia",     de:"für etwas bezahlen", topic:"vitenzi", note:"Nitakulipia nauli = Ich zahle dir die Fahrt" },
+
+  /* Passiv -wa: es wird getan */
+  { sw:"kuitwa",      de:"genannt werden, heißen", topic:"vitenzi", note:"Ninaitwa … = Ich heiße … — ein Passiv, das ihr längst benutzt" },
+  { sw:"kuzaliwa",    de:"geboren werden", topic:"vitenzi", note:"Nilizaliwa mwaka 1995" },
+  { sw:"kufanywa",    de:"gemacht werden", topic:"vitenzi", note:"kufanya + -wa" },
+  { sw:"kuuzwa",      de:"verkauft werden", topic:"vitenzi", note:"Samaki wanauzwa sokoni" },
+  { sw:"kuandikwa",   de:"geschrieben werden", topic:"vitenzi" },
+  { sw:"kupikwa",     de:"gekocht werden", topic:"vitenzi", note:"Chakula kimepikwa = Das Essen ist gekocht" },
+
+  /* Veranlassungsform -sha/-za: jemanden etwas tun lassen */
+  { sw:"kuonyesha",   de:"zeigen", topic:"vitenzi", note:"Nionyeshe njia = Zeig mir den Weg" },
+  { sw:"kulisha",     de:"füttern", topic:"vitenzi", note:"kula (essen) + -isha = essen lassen" },
+  { sw:"kukumbusha",  de:"erinnern (jemanden)", topic:"vitenzi", note:"Nikumbushe kesho = Erinnere mich morgen" },
+  { sw:"kupendeza",   de:"gefallen, ansprechend sein", topic:"vitenzi", note:"Inapendeza! = Das gefällt mir!" },
+  { sw:"kueleza",     de:"erklären", topic:"vitenzi", note:"Nieleze tafadhali = Erklär es mir bitte" },
+  { sw:"kusomesha",   de:"lehren, zur Schule schicken", topic:"vitenzi", note:"kusoma + -esha" },
+
+  /* Zustandsform -ika und Gegenseitigkeit -ana */
+  { sw:"kuvunja",     de:"zerbrechen (etwas)", topic:"vitenzi" },
+  { sw:"kuvunjika",   de:"kaputtgehen, zerbrochen sein", topic:"vitenzi", note:"Kikombe kimevunjika" },
+  { sw:"kuharibika",  de:"kaputtgehen, verderben", topic:"vitenzi", note:"Simu yangu imeharibika — in Dar täglich zu hören", tag:"dar" },
+  { sw:"kupatikana",  de:"erhältlich sein, zu finden sein", topic:"vitenzi", note:"Chakula kinapatikana hapa" },
+  { sw:"kuonekana",   de:"sichtbar sein, erscheinen", topic:"vitenzi" },
+  { sw:"kujulikana",  de:"bekannt sein", topic:"vitenzi" },
+  { sw:"kuonana",     de:"sich sehen, sich treffen", topic:"vitenzi", note:"Tutaonana! = Wir sehen uns!" },
+  { sw:"kusaidiana",  de:"einander helfen", topic:"vitenzi", note:"kusaidia + -ana" },
+
+  /* ---------- Sätze verbinden (Lektionen 17–20) ---------- */
+  { sw:"ambaye",      de:"der/die/das (bei Personen)", topic:"maswali", note:"Kl. 2 ambao · Kl. 7 ambacho · Kl. 9 ambayo · Kl. 10 ambazo" },
+  { sw:"kama",        de:"wenn, falls; wie", topic:"maswali", note:"Kama unataka … = Wenn du willst …" },
+  { sw:"ikiwa",       de:"falls, sofern", topic:"maswali" },
+  { sw:"labda",       de:"vielleicht", topic:"maswali" },
+  { sw:"ingawa",      de:"obwohl", topic:"maswali" },
+  { sw:"bila",        de:"ohne", topic:"maswali", note:"bila shaka = ohne Zweifel, klar" },
+  { sw:"kwa hiyo",    de:"deshalb, also", topic:"maswali" },
+  { sw:"hata",        de:"sogar, selbst", topic:"maswali", note:"hata kidogo = nicht im Geringsten" },
+  { sw:"hadi",        de:"bis", topic:"maswali", note:"hadi kesho = bis morgen" },
+  { sw:"badala ya",   de:"statt, anstelle von", topic:"maswali" },
+  { sw:"kupiga",      de:"schlagen, hauen", topic:"vitenzi", note:"kupiga simu = anrufen · kupiga picha = fotografieren" },
+  { sw:"kuomba",      de:"bitten, beten", topic:"vitenzi", note:"Naomba … = Ich bitte um … — die höflichste Art zu bestellen" },
+
+  /* ---------- Alltag in Dar (Lektionen 21–24) ---------- */
+  { sw:"mgonjwa",     pl:"wagonjwa", cls:"1/2", de:"Kranker, Patient", topic:"afya" },
+  { sw:"kuumwa",      de:"Schmerzen haben, krank sein", topic:"afya", note:"Ninaumwa kichwa = Ich habe Kopfschmerzen" },
+  { sw:"kikohozi",    pl:"vikohozi", cls:"7/8", de:"Husten", topic:"afya" },
+  { sw:"mafua",       cls:"6", de:"Erkältung, Schnupfen", topic:"afya", note:"nur Plural, Klasse 6" },
+  { sw:"kuharisha",   de:"Durchfall haben", topic:"afya", note:"Das häufigste Reisethema — kein Grund für Scham", tag:"tz" },
+  { sw:"kupima",      de:"messen, untersuchen, testen", topic:"afya", note:"kupima malaria = auf Malaria testen" },
+  { sw:"sindano",     cls:"9/10", de:"Spritze, Nadel", topic:"afya" },
+  { sw:"kupona",      de:"genesen, gesund werden", topic:"afya", note:"Pona haraka! = Gute Besserung!" },
+  { sw:"kupumzika",   de:"sich ausruhen", topic:"afya" },
+
+  { sw:"kupanga",     de:"mieten; ordnen, planen", topic:"nyumbani", note:"kupanga nyumba = ein Haus mieten" },
+  { sw:"kodi",        cls:"9/10", de:"Miete; Steuer", topic:"nyumbani" },
+  { sw:"mwenye nyumba", pl:"wenye nyumba", cls:"1/2", de:"Vermieter/in, Hausbesitzer/in", topic:"nyumbani" },
+  { sw:"fundi",       pl:"mafundi", cls:"9/6", de:"Handwerker, Fachmann", topic:"nyumbani", note:"fundi umeme = Elektriker, fundi bomba = Klempner" },
+  { sw:"bomba",       pl:"mabomba", cls:"5/6", de:"Rohr, Wasserhahn, Pumpe", topic:"nyumbani" },
+
+  { sw:"mkataba",     pl:"mikataba", cls:"3/4", de:"Vertrag", topic:"kazi" },
+  { sw:"hati",        cls:"9/10", de:"Dokument, Urkunde", topic:"kazi" },
+  { sw:"pasipoti",    cls:"9/10", de:"Reisepass", topic:"kazi" },
+  { sw:"kibali",      pl:"vibali", cls:"7/8", de:"Genehmigung, Erlaubnis", topic:"kazi", note:"kibali cha kazi = Arbeitserlaubnis", tag:"tz" },
+
+  { sw:"tikiti",      cls:"9/10", de:"Fahrkarte, Ticket", topic:"safari" },
+  { sw:"nauli",       cls:"9/10", de:"Fahrpreis, Fahrgeld", topic:"safari", note:"Nauli ni ngapi? = Was kostet die Fahrt?", tag:"dar" },
+  { sw:"dereva",      pl:"madereva", cls:"9/6", de:"Fahrer/in", topic:"safari" },
+  { sw:"abiria",      cls:"9/10", de:"Fahrgast, Passagier", topic:"safari" },
+  { sw:"mzigo",       pl:"mizigo", cls:"3/4", de:"Gepäck, Last", topic:"safari" }
 ];
 
+/* Die id kommt aus der Position im Array. Neue Wörter deshalb IMMER unten
+   anhängen und nie dazwischenschieben: Der Lernfortschritt auf den Geräten
+   ist nach diesen ids gespeichert, eine Verschiebung würde ihn zerreißen. */
 KS.vocab.forEach(function (v, i) { v.id = "v" + i; });

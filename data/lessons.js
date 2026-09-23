@@ -819,5 +819,915 @@ KS.lessons = [
         why: "Daladala gehört zu Klasse 9 — die Subjektvorsilbe ist i-, nicht a- (das wäre eine Person)." },
       { type: "translate", q: "Lass mich hier raus. (2 Wörter)", a: "Shusha hapa" }
     ]
+  },
+
+  /* ============================ 13 ============================ */
+  {
+    id: "l13",
+    title: "Ninakupikia — etwas für jemanden tun",
+    goal: "Mit der Endung -ia/-ea sagen, für wen oder wozu etwas geschieht.",
+    mwalimu: [
+      { sw: "Karibu tena. Ninakupikia chakula.", de: "Willkommen zurück. Ich koche dir Essen." },
+      { sw: "", de: "Ihr habt das Grundgerüst. Jetzt kommt das, was Swahili wirklich mächtig macht: die <b>Verberweiterungen</b>. Man hängt eine Silbe an den Stamm — und das Verb bedeutet etwas Neues." },
+      { sw: "", de: "Wir fangen mit der nützlichsten an. Im Deutschen sagt ihr „für dich“ als eigenes Wort. Im Swahili steckt das <b>im Verb</b>: kupika = kochen, <b>kupikia</b> = für jemanden kochen." }
+    ],
+    grammar: [
+      { h: "Die Anwendungsform: -ia oder -ea",
+        body: "Vor das End-a kommt <b>-i-</b> oder <b>-e-</b>. Was davon, entscheidet der " +
+              "Vokal <b>direkt vor dem End-a</b>:<br><br>" +
+              "a, i, u → <b>-ia</b>:<br>" +
+              "kupik<b>a</b> → kupik<b>ia</b> · kuandik<b>a</b> → kuandik<b>ia</b> · kulip<b>a</b> → kulip<b>ia</b><br><br>" +
+              "e, o → <b>-ea</b>:<br>" +
+              "kul<b>e</b>ta → kulet<b>ea</b> · kus<b>o</b>ma → kusom<b>ea</b><br><br>" +
+              "Bei <i>kuleta</i> zählt also das <b>e</b>, nicht das End-a." },
+      { h: "Stämme, die auf einen Vokal enden: -lia / -lea",
+        body: "Endet der Stamm selbst auf einen Vokal, schiebt sich ein <b>-l-</b> dazwischen:<br>" +
+              "kununu<b>a</b> → kununu<b>lia</b><br>" +
+              "kufungu<b>a</b> → kufungu<b>lia</b><br>" +
+              "kut<b>oa</b> → kuto<b>lea</b><br>" +
+              "Ohne das -l- ließen sich die Vokale nicht auseinanderhalten." },
+      { h: "Für wen? Das steht als Objekt im Verb",
+        body: "Die Anwendungsform allein sagt nur, <i>dass</i> es für jemanden ist. " +
+              "<b>Wer</b> das ist, steckt im Objektinfix — genau dort, wo ihr es schon kennt:<br><br>" +
+              "ni-na-<b>ku</b>-pikia = ich koche <b>für dich</b><br>" +
+              "a-me-<b>ni</b>-letea = er/sie hat <b>mir</b> gebracht<br>" +
+              "tu-ta-<b>wa</b>-nunulia = wir werden <b>für sie</b> kaufen<br><br>" +
+              "Ohne Objekt klingt es unvollständig — so wie „ich koche für“ im Deutschen." },
+      { h: "Nicht nur „für wen“, auch „wozu“",
+        body: "<b>Nitakulipia nauli.</b> Ich bezahle dir die Fahrt. (kulipa → kulipia)<br>" +
+              "<b>Ninasomea mtihani.</b> Ich lerne für die Prüfung.<br>" +
+              "<b>Nipunguzie bei.</b> Mach mir den Preis billiger. — der Satz in Kariakoo." }
+    ],
+    vocab: ["kupikia", "kuletea", "kununulia", "kuandikia", "kuuzia", "kulipia",
+            "kupika", "kuleta", "kununua", "kuandika"],
+    examples: [
+      { sw: "Ninakupikia chakula.", de: "Ich koche dir Essen.", gloss: "ni-na-ku-pik-ia" },
+      { sw: "Ameniletea maji.", de: "Er/sie hat mir Wasser gebracht.", gloss: "a-me-ni-let-ea" },
+      { sw: "Nitakununulia matunda.", de: "Ich werde dir Obst kaufen.", gloss: "ni-ta-ku-nunu-lia" },
+      { sw: "Ananiandikia barua.", de: "Er/sie schreibt mir einen Brief.", gloss: "a-na-ni-andik-ia" },
+      { sw: "Nitakulipia nauli.", de: "Ich bezahle dir die Fahrt.", gloss: "kulipa → kulipia" }
+    ],
+    culture: "Im Laden und im Daladala hört ihr die Anwendungsform ständig: <b>Nipunguzie bei</b> " +
+             "(mach mir den Preis billiger), <b>Nifungulie mlango</b> (mach mir die Tür auf), " +
+             "<b>Nipe</b> (gib mir). Wer sie beherrscht, klingt sofort weniger nach Lehrbuch.",
+    practice: [
+      { instruction: "Häng die Anwendungsform an. Schau auf den Vokal direkt vor dem End-a: i heißt -ia.",
+        q: "„für jemanden kochen“ (Grundform von kupika)", build: "ku + pik + ia", a: "kupikia",
+        explain: "Vor dem End-a steht i, also -ia. Genauso kuandika → kuandikia, kulipa → kulipia." },
+      { instruction: "Jetzt komplett. Denk an das Objektinfix — wer bekommt das Essen?",
+        q: "„Ich koche für dich.“ (ein Wort)", build: "ni + na + ku + pik + ia", a: "Ninakupikia",
+        explain: "ku- ist „dich“. Ohne das Objekt bliebe offen, für wen gekocht wird." },
+      { instruction: "Diesmal mit e-Vokal und im Perfekt. kuleta hat vor dem End-a ein e.",
+        q: "„Er hat mir Wasser gebracht.“ (2 Wörter)", build: "a + me + ni + let + ea + maji",
+        a: "Ameniletea maji",
+        explain: "kuleta → kuletea, weil vor dem End-a ein e steht. ni- = mir." }
+    ],
+    exercises: [
+      { type: "translate", q: "Ich koche für dich. (ein Wort)", a: "Ninakupikia" },
+      { type: "translate", q: "Grundform: „jemandem bringen“ (von kuleta)", a: "kuletea" },
+      { type: "choice", q: "Welche Anwendungsform hat kusoma?",
+        options: ["kusomia", "kusomea", "kusomlia", "kusomwa"], a: 1,
+        why: "Vor dem End-a steht o — also -ea. Nur bei a, i, u wird es -ia." },
+      { type: "choice", q: "kununua endet auf einen Vokal. Wie lautet die Anwendungsform?",
+        options: ["kununuia", "kununulia", "kununuea", "kununuwa"], a: 1,
+        why: "Stämme auf Vokal schieben ein -l- ein: -lia bzw. -lea." },
+      { type: "translate", q: "Er hat mir Wasser gebracht. (2 Wörter)", a: "Ameniletea maji" },
+      { type: "translate", q: "Ich werde für dich bezahlen. (ein Wort)", a: "Nitakulipia" }
+    ]
+  },
+
+  /* ============================ 14 ============================ */
+  {
+    id: "l14",
+    title: "Chakula kimepikwa — das Passiv",
+    goal: "Mit -wa sagen, dass etwas getan wird, ohne zu nennen, wer es tut.",
+    mwalimu: [
+      { sw: "Chakula kimepikwa. Karibu chakula!", de: "Das Essen ist gekocht. Guten Appetit!" },
+      { sw: "", de: "Die zweite Erweiterung dreht den Satz um. Nicht mehr: <i>jemand kocht das Essen</i>, sondern: <i>das Essen wird gekocht</i>. Dafür kommt ein <b>-w-</b> vor das End-a." },
+      { sw: "", de: "Und jetzt eine kleine Überraschung: Dieses Passiv benutzt ihr seit Lektion 2, ohne es zu wissen. <b>Ninaitwa Cedric</b> heißt wörtlich „ich <b>werde genannt</b> Cedric“." }
+    ],
+    grammar: [
+      { h: "Die Passivform: -wa vor dem End-a",
+        body: "kupik<b>a</b> → kupik<b>wa</b> gekocht werden<br>" +
+              "kuandik<b>a</b> → kuandik<b>wa</b> geschrieben werden<br>" +
+              "kuuz<b>a</b> → kuuz<b>wa</b> verkauft werden<br>" +
+              "kufany<b>a</b> → kufany<b>wa</b> gemacht werden<br>" +
+              "kupend<b>a</b> → kupend<b>wa</b> geliebt werden<br><br>" +
+              "Der Rest des Verbs bleibt, wie ihr ihn kennt: Subjekt, Zeit, Stamm." },
+      { h: "Stämme auf Vokal: -liwa / -lewa",
+        body: "Dasselbe -l- wie bei der Anwendungsform:<br>" +
+              "kununu<b>a</b> → kununu<b>liwa</b><br>" +
+              "kut<b>oa</b> → kuto<b>lewa</b><br>" +
+              "kul<b>a</b> → ku<b>liwa</b> (gegessen werden)<br>" +
+              "kunyw<b>a</b> → kunyw<b>ewa</b> (getrunken werden)" },
+      { h: "Wer es tut, kommt mit na",
+        body: "Soll der Täter doch genannt werden, hängt man ihn mit <b>na</b> an:<br>" +
+              "<b>Chakula kinapikwa na mama.</b> Das Essen wird von Mama gekocht.<br>" +
+              "<b>Barua iliandikwa na Amani.</b> Der Brief wurde von Amani geschrieben.<br><br>" +
+              "Meistens lässt man ihn aber weg — genau dafür gibt es das Passiv." },
+      { h: "Zwei Passive, die ihr längst benutzt",
+        body: "<b>Ninaitwa Cedric.</b> Ich heiße Cedric. — kuita (rufen, nennen) → kuitwa<br>" +
+              "<b>Nilizaliwa mwaka 1995.</b> Ich wurde 1995 geboren. — kuzaa (gebären) → kuzaliwa<br><br>" +
+              "Im Swahili gibt es kein eigenes Wort für „heißen“. Man <i>wird genannt</i>." }
+    ],
+    vocab: ["kuitwa", "kuzaliwa", "kufanywa", "kuuzwa", "kuandikwa", "kupikwa",
+            "kufanya", "kuuza"],
+    examples: [
+      { sw: "Chakula kimepikwa.", de: "Das Essen ist gekocht.", gloss: "ki-me-pik-wa — Kl. 7, darum ki-" },
+      { sw: "Ninaitwa Amani.", de: "Ich heiße Amani.", gloss: "wörtlich: ich werde genannt" },
+      { sw: "Nilizaliwa Dar es Salaam.", de: "Ich wurde in Dar es Salaam geboren.", gloss: "ni-li-zali-wa" },
+      { sw: "Samaki wanauzwa sokoni.", de: "Fisch wird auf dem Markt verkauft.", gloss: "wa-na-uz-wa" },
+      { sw: "Barua iliandikwa na Amani.", de: "Der Brief wurde von Amani geschrieben.", gloss: "na = von" }
+    ],
+    culture: "Auf Schildern und in Ansagen steht fast alles im Passiv: <b>Hapa hapavutwi sigara</b> " +
+             "(hier wird nicht geraucht), <b>Imefungwa</b> (geschlossen), <b>Inauzwa</b> (zu verkaufen). " +
+             "Wer das Passiv erkennt, liest Dar es Salaam plötzlich mit.",
+    practice: [
+      { instruction: "Setz ein -w- vor das End-a. Mehr ist es nicht.",
+        q: "„gekocht werden“ (Grundform von kupika)", build: "ku + pik + wa", a: "kupikwa",
+        explain: "Genauso kuandika → kuandikwa, kuuza → kuuzwa." },
+      { instruction: "Jetzt im Satz. chakula gehört zu Klasse 7 — die Vorsilbe ist ki-.",
+        q: "„Das Essen ist gekocht.“ (2 Wörter)", build: "chakula + ki + me + pik + wa",
+        a: "Chakula kimepikwa",
+        explain: "ki- für Klasse 7, -me- für das Perfekt: es ist fertig und das Ergebnis zählt." },
+      { instruction: "Und der Satz, den du seit Lektion 2 sagst — jetzt weißt du, warum er so aussieht.",
+        q: "„Ich heiße Cedric.“ (2 Wörter)", build: "ni + na + it + wa + Cedric", a: "Ninaitwa Cedric",
+        explain: "kuita = rufen, nennen. Ninaitwa = ich werde genannt. Ein Passiv, mitten im Alltag." }
+    ],
+    exercises: [
+      { type: "translate", q: "Grundform: „verkauft werden“ (von kuuza)", a: "kuuzwa" },
+      { type: "translate", q: "Das Essen ist gekocht. (2 Wörter)", a: "Chakula kimepikwa" },
+      { type: "choice", q: "Warum heißt „ich heiße“ auf Swahili Ninaitwa?",
+        options: ["Weil es ein besonderes Verb für Namen gibt",
+                  "Weil es wörtlich „ich werde genannt“ heißt — ein Passiv",
+                  "Weil kuita unregelmäßig ist",
+                  "Weil der Name immer Objekt ist"], a: 1,
+        why: "kuita = rufen, nennen. Das Passiv kuitwa = genannt werden. Ein eigenes Wort für „heißen“ gibt es nicht." },
+      { type: "choice", q: "kula endet auf einen Vokal. Wie lautet das Passiv?",
+        options: ["kulwa", "kuliwa", "kulewa", "kulika"], a: 1,
+        why: "Stämme auf Vokal bekommen -liwa: kula → kuliwa, gegessen werden." },
+      { type: "translate", q: "Ich wurde in Dar es Salaam geboren. (4 Wörter)", a: "Nilizaliwa Dar es Salaam" },
+      { type: "translate", q: "Fisch wird auf dem Markt verkauft. (3 Wörter)", a: "Samaki wanauzwa sokoni" }
+    ]
+  },
+
+  /* ============================ 15 ============================ */
+  {
+    id: "l15",
+    title: "Nionyeshe — jemanden etwas tun lassen",
+    goal: "Mit -sha/-za Verben bilden, die ein Veranlassen ausdrücken: zeigen, füttern, erinnern.",
+    mwalimu: [
+      { sw: "Nionyeshe njia, tafadhali.", de: "Zeig mir bitte den Weg." },
+      { sw: "", de: "Die dritte Erweiterung macht aus „etwas tun“ ein „jemanden etwas tun lassen“. Aus <i>sehen</i> wird <b>zeigen</b>, aus <i>essen</i> wird <b>füttern</b>, aus <i>sich erinnern</i> wird <b>erinnern</b>." },
+      { sw: "", de: "Ich sage es offen: Diese Form ist <b>weniger regelmäßig</b> als die anderen. Lernt sie als Wörter. Das Muster hilft euch beim Erkennen — nicht beim Raten." }
+    ],
+    grammar: [
+      { h: "Die Veranlassungsform: meist -sha, -isha oder -esha",
+        body: "kusoma (lernen) → <b>kusomesha</b> lehren, zur Schule schicken<br>" +
+              "kula (essen) → <b>kulisha</b> füttern<br>" +
+              "kukumbuka (sich erinnern) → <b>kukumbusha</b> jemanden erinnern<br>" +
+              "kuona (sehen) → <b>kuonyesha</b> zeigen<br>" +
+              "kufunda (lehren, veraltet) → <b>kufundisha</b> unterrichten<br><br>" +
+              "Ihr seht: Das Grundmuster ist erkennbar, die Details schwanken." },
+      { h: "Manche nehmen -za",
+        body: "kupenda (mögen) → <b>kupendeza</b> gefallen, ansprechend sein<br>" +
+              "kuelea (klar sein) → <b>kueleza</b> erklären, klarmachen<br><br>" +
+              "<b>Inapendeza!</b> Das gefällt mir!<br>" +
+              "<b>Nieleze tafadhali.</b> Erklär es mir bitte." },
+      { h: "Was sich ändert: ein neues Objekt kommt dazu",
+        body: "Vorher gab es einen Handelnden, jetzt zwei:<br><br>" +
+              "<b>Mtoto anasoma.</b> Das Kind lernt.<br>" +
+              "<b>Mwalimu anamsomesha mtoto.</b> Der Lehrer unterrichtet das Kind.<br><br>" +
+              "<b>Ninakula.</b> Ich esse.<br>" +
+              "<b>Ninalisha mbwa.</b> Ich füttere den Hund." },
+      { h: "Drei Sätze für jeden Tag",
+        body: "<b>Nionyeshe …</b> Zeig mir …<br>" +
+              "<b>Nikumbushe …</b> Erinnere mich an …<br>" +
+              "<b>Nieleze …</b> Erklär mir …<br><br>" +
+              "Alle drei stehen im Möglichkeitsmodus (Endung -e) — das ist die höfliche Bitte, " +
+              "die ihr aus Lektion 4 kennt." }
+    ],
+    vocab: ["kuonyesha", "kulisha", "kukumbusha", "kupendeza", "kueleza", "kusomesha",
+            "kufundisha", "kukumbuka"],
+    examples: [
+      { sw: "Mwalimu ananifundisha Kiswahili.", de: "Der Lehrer unterrichtet mich in Swahili.", gloss: "a-na-ni-fundisha" },
+      { sw: "Nionyeshe njia, tafadhali.", de: "Zeig mir bitte den Weg.", gloss: "ni- = mir, -e = Bitte" },
+      { sw: "Nikumbushe kesho.", de: "Erinnere mich morgen.", gloss: "kukumbuka → kukumbusha" },
+      { sw: "Ninalisha mbwa.", de: "Ich füttere den Hund.", gloss: "kula → kulisha" },
+      { sw: "Chakula hiki kinapendeza.", de: "Dieses Essen ist ansprechend.", gloss: "kupenda → kupendeza" }
+    ],
+    culture: "<b>Nionyeshe</b> ist im Alltag Gold wert: im Laden auf etwas hinter der Theke zeigen, " +
+             "beim Bajaji-Fahrer nach dem Weg fragen, im Büro um ein Dokument bitten. Ein Wort, " +
+             "das fast immer weiterhilft — und höflicher wirkt als Zeigen mit dem Finger.",
+    practice: [
+      { instruction: "Aus „essen“ wird „essen lassen“. Der Stamm ist nur l-, das Verb ist ja einsilbig.",
+        q: "„füttern“ (Grundform, von kula)", build: "ku + l + isha", a: "kulisha",
+        explain: "kula → kulisha: jemanden essen lassen. Ninalisha mbwa = Ich füttere den Hund." },
+      { instruction: "Jetzt ein ganzer Satz mit Objektinfix. Wen unterrichtet der Lehrer?",
+        q: "„Der Lehrer unterrichtet mich.“ (2 Wörter)", build: "mwalimu + a + na + ni + fundisha",
+        a: "Mwalimu ananifundisha",
+        explain: "ni- = mich. Ohne Objektinfix bliebe offen, wer unterrichtet wird." },
+      { instruction: "Und die höfliche Bitte: Endung -e statt -a, das Objekt steht vorn.",
+        q: "„Zeig mir den Weg.“ (2 Wörter)", build: "ni + onyeshe + njia", a: "Nionyeshe njia",
+        explain: "Der Möglichkeitsmodus aus Lektion 4, hier als Bitte. Nionyeshe, Nikumbushe, Nieleze." }
+    ],
+    exercises: [
+      { type: "translate", q: "Grundform: „füttern“ (von kula)", a: "kulisha" },
+      { type: "translate", q: "Zeig mir den Weg. (2 Wörter)", a: "Nionyeshe njia" },
+      { type: "choice", q: "Was macht die Veranlassungsform mit dem Satz?",
+        options: ["Sie verneint ihn",
+                  "Sie bringt einen zweiten Beteiligten hinein — jemand lässt jemanden etwas tun",
+                  "Sie schiebt ihn in die Vergangenheit",
+                  "Sie macht aus dem Objekt ein Subjekt"], a: 1,
+        why: "Mtoto anasoma (das Kind lernt) → Mwalimu anamsomesha mtoto (der Lehrer lässt das Kind lernen)." },
+      { type: "translate", q: "Erinnere mich morgen. (2 Wörter)", a: "Nikumbushe kesho" },
+      { type: "choice", q: "Welches Verb heißt „erklären“?",
+        options: ["kuelewa", "kueleza", "kuuliza", "kuonyesha"], a: 1,
+        why: "kuelewa = verstehen, kueleza = erklären (verständlich machen). Ein Buchstabe, zwei Rollen." },
+      { type: "translate", q: "Ich füttere den Hund. (2 Wörter)", a: "Ninalisha mbwa" }
+    ]
+  },
+
+  /* ============================ 16 ============================ */
+  {
+    id: "l16",
+    title: "Imeharibika — von selbst und einander",
+    goal: "Mit -ika sagen, dass etwas in einem Zustand ist, und mit -ana, dass zwei es miteinander tun.",
+    mwalimu: [
+      { sw: "Simu yangu imeharibika. Lakini tutaonana kesho!", de: "Mein Handy ist kaputt. Aber wir sehen uns morgen!" },
+      { sw: "", de: "Zwei Erweiterungen zum Abschluss. Die erste sagt: etwas <b>ist</b> in einem Zustand — ohne Schuldigen. Die zweite: zwei Leute tun es <b>miteinander</b>." },
+      { sw: "", de: "Und ihr kennt sie beide schon aus dem Abschied: <b>Tutaonana!</b> — wir werden einander sehen." }
+    ],
+    grammar: [
+      { h: "Die Zustandsform -ika / -eka",
+        body: "kuvunja (zerbrechen) → <b>kuvunjika</b> kaputtgehen, zerbrochen sein<br>" +
+              "kuharibu (beschädigen) → <b>kuharibika</b> kaputtgehen<br>" +
+              "kufungua (öffnen) → <b>kufunguka</b> aufgehen<br><br>" +
+              "<b>Kikombe kimevunjika.</b> Die Tasse ist zerbrochen.<br>" +
+              "<b>Simu yangu imeharibika.</b> Mein Handy ist kaputtgegangen." },
+      { h: "Zustand oder Passiv? Der Unterschied ist die Schuldfrage",
+        body: "<b>Simu ime<u>haribiwa</u>.</b> Das Handy wurde kaputt gemacht. (jemand war es)<br>" +
+              "<b>Simu ime<u>haribika</u>.</b> Das Handy ist kaputtgegangen. (es ist einfach so)<br><br>" +
+              "Im Alltag nimmt man fast immer die Zustandsform. Wer -iwa sagt, schiebt " +
+              "jemandem die Schuld zu — das will man selten." },
+      { h: "-ika heißt auch: es lässt sich",
+        body: "kupata (bekommen) → <b>kupatikana</b> erhältlich sein<br>" +
+              "kuona (sehen) → <b>kuonekana</b> sichtbar sein, erscheinen<br>" +
+              "kujua (kennen) → <b>kujulikana</b> bekannt sein<br><br>" +
+              "<b>Chakula kinapatikana hapa.</b> Essen gibt es hier.<br>" +
+              "<b>Haionekani.</b> Man sieht es nicht." },
+      { h: "Die Gegenseitigkeitsform -ana: einander",
+        body: "kuona → <b>kuonana</b> sich sehen, sich treffen<br>" +
+              "kusaidia → <b>kusaidiana</b> einander helfen<br>" +
+              "kupenda → <b>kupendana</b> einander lieben<br>" +
+              "kupiga → <b>kupigana</b> sich schlagen, kämpfen<br><br>" +
+              "<b>Tutaonana kesho!</b> Wir sehen uns morgen!<br>" +
+              "<b>Tunasaidiana kazini.</b> Wir helfen einander bei der Arbeit." }
+    ],
+    vocab: ["kuvunja", "kuvunjika", "kuharibika", "kupatikana", "kuonekana", "kujulikana",
+            "kuonana", "kusaidiana"],
+    examples: [
+      { sw: "Kikombe kimevunjika.", de: "Die Tasse ist zerbrochen.", gloss: "ki-me-vunj-ika" },
+      { sw: "Simu yangu imeharibika.", de: "Mein Handy ist kaputtgegangen.", gloss: "i-me-harib-ika — Kl. 9" },
+      { sw: "Chakula kinapatikana hapa.", de: "Essen ist hier erhältlich.", gloss: "kupata → kupatikana" },
+      { sw: "Tutaonana kesho!", de: "Wir sehen uns morgen!", gloss: "tu-ta-on-ana" },
+      { sw: "Tunasaidiana kazini.", de: "Wir helfen einander bei der Arbeit.", gloss: "kusaidia → kusaidiana" }
+    ],
+    culture: "<b>Umeme umekatika</b> — der Strom ist weg. Diesen Satz werdet ihr in Dar öfter sagen, " +
+             "als euch lieb ist. Auch er steht in der Zustandsform: Niemand hat den Strom abgestellt, " +
+             "er ist eben gegangen. Genau diese Haltung steckt in der Endung -ika.",
+    practice: [
+      { instruction: "Zustandsform: -ika statt End-a. kikombe ist Klasse 7, also ki-.",
+        q: "„Die Tasse ist zerbrochen.“ (2 Wörter)", build: "kikombe + ki + me + vunj + ika",
+        a: "Kikombe kimevunjika",
+        explain: "Nicht „jemand hat sie zerbrochen“, sondern: sie ist zerbrochen. Das -me- zeigt den Zustand jetzt." },
+      { instruction: "Jetzt dein Handy. simu gehört zu Klasse 9 — die Vorsilbe ist i-.",
+        q: "„Mein Handy ist kaputtgegangen.“ (3 Wörter)", build: "simu + yangu + i + me + harib + ika",
+        a: "Simu yangu imeharibika",
+        explain: "yangu = mein, für Klasse 9. Und imeharibika, nicht imeharibiwa — niemand ist schuld." },
+      { instruction: "Zum Schluss die Gegenseitigkeit. Genau so verabschiedet man sich.",
+        q: "„Wir sehen uns morgen!“ (2 Wörter)", build: "tu + ta + on + ana + kesho", a: "Tutaonana kesho",
+        explain: "kuona → kuonana: einander sehen. Tutaonana ist der normale Abschied." }
+    ],
+    exercises: [
+      { type: "translate", q: "Wir sehen uns morgen! (2 Wörter)", a: "Tutaonana kesho" },
+      { type: "choice", q: "Das Handy ist einfach kaputt — niemand ist schuld. Was sagst du?",
+        options: ["Simu imeharibiwa", "Simu imeharibika", "Simu inaharibu", "Simu imeharibisha"], a: 1,
+        why: "-ika ist die Zustandsform: es ist kaputtgegangen. -iwa wäre Passiv: jemand hat es kaputt gemacht." },
+      { type: "translate", q: "Die Tasse ist zerbrochen. (2 Wörter)", a: "Kikombe kimevunjika" },
+      { type: "choice", q: "Was bedeutet kusaidiana?",
+        options: ["viel helfen", "einander helfen", "geholfen werden", "helfen lassen"], a: 1,
+        why: "-ana ist die Gegenseitigkeitsform: kusaidia (helfen) → kusaidiana (einander helfen)." },
+      { type: "translate", q: "Essen ist hier erhältlich. (3 Wörter)", a: "Chakula kinapatikana hapa" },
+      { type: "translate", q: "Wir helfen einander bei der Arbeit. (2 Wörter)", a: "Tunasaidiana kazini" }
+    ]
+  },
+
+  /* ============================ 17 ============================ */
+  {
+    id: "l17",
+    title: "Mtu ambaye — Sätze verbinden",
+    goal: "Mit amba- zwei Aussagen zu einer verbinden: der Mann, der hier arbeitet.",
+    mwalimu: [
+      { sw: "Rafiki ambaye ninamjua anakaa Kariakoo.", de: "Der Freund, den ich kenne, wohnt in Kariakoo." },
+      { sw: "", de: "Bisher habt ihr kurze Sätze gebaut. Jetzt hängen wir sie aneinander: <b>der Mensch, <u>der</u> hier arbeitet</b> — das Buch, <b><u>das</u></b> ich gekauft habe." },
+      { sw: "", de: "Dafür gibt es im Swahili zwei Wege. Wir nehmen zuerst den einfachen: <b>amba-</b> plus Klassenzeichen. Er funktioniert immer, in jeder Zeit, auch verneint." }
+    ],
+    grammar: [
+      { h: "amba- plus Klassenzeichen",
+        body: "Das Bezugswort bestimmt die Endung — dieselbe Kongruenz wie überall:<br><br>" +
+              "Person (Kl. 1) → <b>ambaye</b> · Personen (Kl. 2) → <b>ambao</b><br>" +
+              "Kl. 5 → <b>ambalo</b> · Kl. 6 → <b>ambayo</b><br>" +
+              "Kl. 7 → <b>ambacho</b> · Kl. 8 → <b>ambavyo</b><br>" +
+              "Kl. 9 → <b>ambayo</b> · Kl. 10 → <b>ambazo</b><br><br>" +
+              "Die Endungen sind dieselben Silben, die ihr schon von <i>-angu, -ake</i> und " +
+              "den Demonstrativa kennt." },
+      { h: "Die Wortstellung ist einfach",
+        body: "<b>Bezugswort + amba- + ganz normaler Satz.</b><br><br>" +
+              "<b>Mtu ambaye anafanya kazi hapa.</b> Der Mensch, der hier arbeitet.<br>" +
+              "<b>Kitabu ambacho nilinunua.</b> Das Buch, das ich gekauft habe.<br>" +
+              "<b>Nyumba ambayo tunakaa.</b> Das Haus, in dem wir wohnen.<br><br>" +
+              "Hinter amba- ändert sich am Verb nichts. Das macht diesen Weg so bequem." },
+      { h: "Wenn das Bezugswort das Objekt ist",
+        body: "Dann steht zusätzlich das Objektinfix im Verb — so wie sonst auch:<br><br>" +
+              "<b>Rafiki ambaye nina<u>m</u>jua.</b> Der Freund, den ich kenne.<br>" +
+              "<b>Chakula ambacho nina<u>ki</u>penda.</b> Das Essen, das ich mag.<br><br>" +
+              "Faustregel: Steht das Bezugswort für den Handelnden, braucht es kein Objektinfix. " +
+              "Ist es das Ziel der Handlung, schon." },
+      { h: "Warum amba- immer geht",
+        body: "Es gibt noch einen zweiten Weg (nächste Lektion), der das Zeichen ins Verb schiebt. " +
+              "Der kann aber <b>kein Perfekt</b> und <b>keine Verneinung</b>. amba- kann beides:<br><br>" +
+              "<b>Mtu ambaye amefika.</b> Der Mensch, der angekommen ist.<br>" +
+              "<b>Watu ambao hawaelewi.</b> Die Leute, die nicht verstehen.<br><br>" +
+              "Im Zweifel also: amba-." }
+    ],
+    vocab: ["ambaye", "mtu", "kitabu", "rafiki", "jirani", "kufanya", "kujua", "kununua"],
+    examples: [
+      { sw: "Mtu ambaye anafanya kazi hapa ni rafiki yangu.", de: "Der Mann, der hier arbeitet, ist mein Freund.", gloss: "amba + ye — Kl. 1" },
+      { sw: "Kitabu ambacho nilinunua ni kizuri.", de: "Das Buch, das ich gekauft habe, ist gut.", gloss: "amba + cho — Kl. 7" },
+      { sw: "Rafiki ambaye ninamjua anakaa Kariakoo.", de: "Der Freund, den ich kenne, wohnt in Kariakoo.", gloss: "-m- = ihn, weil Objekt" },
+      { sw: "Nyumba ambayo tunakaa ni kubwa.", de: "Das Haus, in dem wir wohnen, ist groß.", gloss: "amba + yo — Kl. 9" },
+      { sw: "Watu ambao hawaelewi wanauliza.", de: "Die Leute, die nicht verstehen, fragen.", gloss: "verneint — hier geht nur amba-" }
+    ],
+    culture: "Im gesprochenen Dar hört ihr beide Wege durcheinander. amba- gilt als etwas " +
+             "deutlicher und wird gern genommen, wenn der Satz länger wird oder man sichergehen " +
+             "will, verstanden zu werden. Für euch ist es der Weg, mit dem ihr nie falsch liegt.",
+    practice: [
+      { instruction: "Bezugswort, dann amba- mit dem passenden Zeichen, dann ein ganz normaler Satz. mtu ist Klasse 1.",
+        q: "„der Mensch, der hier arbeitet“ (5 Wörter)",
+        build: "mtu + ambaye + a + na + fanya + kazi + hapa", a: "Mtu ambaye anafanya kazi hapa",
+        explain: "Kl. 1 → ambaye. Dahinter steht anafanya kazi hapa, unverändert." },
+      { instruction: "Jetzt Klasse 7. Welches Zeichen gehört zu kitabu?",
+        q: "„das Buch, das ich gekauft habe“ (3 Wörter)",
+        build: "kitabu + ambacho + ni + li + nunua", a: "Kitabu ambacho nilinunua",
+        explain: "Kl. 7 → ambacho, wie ki- in kizuri. Das Verb bleibt nilinunua." },
+      { instruction: "Und jetzt ist der Freund nicht der Handelnde, sondern das Ziel — dann kommt das Objektinfix dazu.",
+        q: "„der Freund, den ich kenne“ (3 Wörter)",
+        build: "rafiki + ambaye + ni + na + m + jua", a: "Rafiki ambaye ninamjua",
+        explain: "-m- = ihn. Ohne das Infix hieße es: der Freund, der weiß." }
+    ],
+    exercises: [
+      { type: "choice", q: "Welche amba-Form gehört zu kitabu (Klasse 7)?",
+        options: ["ambaye", "ambayo", "ambacho", "ambalo"], a: 2,
+        why: "Klasse 7 hat ki-/ch-: kitabu, kizuri, ambacho." },
+      { type: "translate", q: "der Mensch, der hier arbeitet (5 Wörter)", a: "Mtu ambaye anafanya kazi hapa" },
+      { type: "translate", q: "das Buch, das ich gekauft habe (3 Wörter)", a: "Kitabu ambacho nilinunua" },
+      { type: "choice", q: "Wann musst du amba- nehmen und kannst nicht ins Verb ausweichen?",
+        options: ["Bei Personen", "Im Perfekt und bei Verneinung", "In der Gegenwart", "Bei Klasse 9"], a: 1,
+        why: "Das Relativzeichen im Verb gibt es nur bei -na-, -li- und -ta-. Perfekt und Verneinung verlangen amba-." },
+      { type: "translate", q: "der Freund, den ich kenne (3 Wörter)", a: "Rafiki ambaye ninamjua" },
+      { type: "translate", q: "Das Haus, in dem wir wohnen, ist groß. (5 Wörter)", a: "Nyumba ambayo tunakaa ni kubwa" }
+    ]
+  },
+
+  /* ============================ 18 ============================ */
+  {
+    id: "l18",
+    title: "Ninayemjua — der Relativsatz im Verb",
+    goal: "Den Relativsatz ohne amba- bilden: das Zeichen wandert zwischen Zeit und Stamm.",
+    mwalimu: [
+      { sw: "Mtu ninayemjua anakaa Kariakoo.", de: "Der Mensch, den ich kenne, wohnt in Kariakoo." },
+      { sw: "", de: "Derselbe Satz wie in der letzten Lektion — nur ist amba- verschwunden. Das Zeichen <b>-ye-</b> sitzt jetzt <b>im Verb</b>, zwischen Zeit und Stamm." },
+      { sw: "", de: "So klingt es kürzer und flüssiger. Ihr müsst es vor allem <b>verstehen</b> können; sagen dürft ihr weiter amba-, das ist nie falsch." }
+    ],
+    grammar: [
+      { h: "Der Platz: Subjekt – Zeit – Relativzeichen – (Objekt) – Stamm",
+        body: "ni-na-<b>ye</b>-m-jua = den ich kenne<br>" +
+              "a-na-<b>ye</b>-fanya = der/die macht<br>" +
+              "ni-li-<b>cho</b>-soma = das ich gelesen habe<br>" +
+              "wa-na-<b>o</b>-kaa = die wohnen<br><br>" +
+              "Das Baukastenprinzip aus Lektion 4 — nur mit einem Fach mehr." },
+      { h: "Die Relativzeichen",
+        body: "Kl. 1 <b>-ye-</b> · Kl. 2 <b>-o-</b><br>" +
+              "Kl. 3 <b>-o-</b> · Kl. 4 <b>-yo-</b><br>" +
+              "Kl. 5 <b>-lo-</b> · Kl. 6 <b>-yo-</b><br>" +
+              "Kl. 7 <b>-cho-</b> · Kl. 8 <b>-vyo-</b><br>" +
+              "Kl. 9 <b>-yo-</b> · Kl. 10 <b>-zo-</b><br><br>" +
+              "Es sind dieselben Silben wie bei amba- — nur ohne das amba davor." },
+      { h: "Die Zukunft ändert sich: -ta- wird -taka-",
+        body: "Mit Relativzeichen heißt die Zukunft nicht -ta-, sondern <b>-taka-</b>:<br><br>" +
+              "<b>Mtu atakayekuja …</b> Der Mensch, der kommen wird …<br>" +
+              "a-<b>taka</b>-ye-kuja<br><br>" +
+              "Nur hier. Ohne Relativsatz bleibt es atakuja." },
+      { h: "Die Grenze — und ein Satz, der sich lohnt",
+        body: "Diesen Weg gibt es nur bei <b>-na-, -li-, -ta(ka)-</b>. Für Perfekt und Verneinung " +
+              "nehmt ihr amba- (letzte Lektion).<br><br>" +
+              "Ein Sonderfall, den ihr ständig hören werdet — <b>-vyo-</b> im Sinne von „wie“:<br>" +
+              "<b>Kama unavyojua …</b> Wie du weißt …<br>" +
+              "<b>Kama ninavyoona …</b> Wie ich sehe …" }
+    ],
+    vocab: ["kujua", "kusoma", "kukaa", "kufika", "mtu", "kitabu", "nyumba", "jirani"],
+    examples: [
+      { sw: "Mtu ninayemjua anakaa Kariakoo.", de: "Der Mensch, den ich kenne, wohnt in Kariakoo.", gloss: "ni-na-ye-m-jua" },
+      { sw: "Kitabu nilichosoma ni kizuri.", de: "Das Buch, das ich gelesen habe, ist gut.", gloss: "ni-li-cho-soma" },
+      { sw: "Watu wanaokaa hapa ni wazuri.", de: "Die Leute, die hier wohnen, sind nett.", gloss: "wa-na-o-kaa" },
+      { sw: "Mtu atakayekuja ni rafiki yangu.", de: "Der Mensch, der kommen wird, ist mein Freund.", gloss: "a-taka-ye-kuja" },
+      { sw: "Kama unavyojua, Dar ina joto.", de: "Wie du weißt, ist es in Dar heiß.", gloss: "-vyo- = wie" }
+    ],
+    culture: "Diese Kurzform ist der Grund, warum gesprochenes Swahili für Lernende schnell klingt: " +
+             "Ein ganzer Nebensatz steckt in einem einzigen Wort. Wer <i>ninayemjua</i> im Ohr hat, " +
+             "zerlegt es beim nächsten Mal von allein.",
+    practice: [
+      { instruction: "Bau das Verb Stück für Stück: ich – Gegenwart – Relativzeichen für Personen – ihn – kennen.",
+        q: "„der Mensch, den ich kenne“ (2 Wörter)", build: "mtu + ni + na + ye + m + jua",
+        a: "Mtu ninayemjua",
+        explain: "-ye- zeigt zurück auf mtu, -m- ist das Objekt. Zusammen: ninayemjua." },
+      { instruction: "Jetzt Vergangenheit und Klasse 7. Welches Zeichen gehört zu kitabu?",
+        q: "„das Buch, das ich gelesen habe“ (2 Wörter)", build: "kitabu + ni + li + cho + soma",
+        a: "Kitabu nilichosoma",
+        explain: "Kl. 7 → -cho-. Das ist dasselbe cho wie in ambacho." },
+      { instruction: "Und Plural: Personen in der Mehrzahl haben das kürzeste Zeichen von allen.",
+        q: "„die Leute, die hier wohnen“ (3 Wörter)", build: "watu + wa + na + o + kaa + hapa",
+        a: "Watu wanaokaa hapa",
+        explain: "Kl. 2 → -o-. wa-na-o-kaa: die wohnen." }
+    ],
+    exercises: [
+      { type: "translate", q: "der Mensch, den ich kenne (2 Wörter)", a: "Mtu ninayemjua" },
+      { type: "translate", q: "das Buch, das ich gelesen habe (2 Wörter)", a: "Kitabu nilichosoma" },
+      { type: "choice", q: "Wie heißt die Zukunft im Relativsatz?",
+        options: ["-ta- wie immer", "-taka-", "-tale-", "-ngeta-"], a: 1,
+        why: "Nur im Relativsatz: atakayekuja = der kommen wird. Sonst bleibt es atakuja." },
+      { type: "choice", q: "Welches Relativzeichen gehört zu Klasse 2 (watu)?",
+        options: ["-ye-", "-o-", "-cho-", "-zo-"], a: 1,
+        why: "Kl. 2 hat -o-: wanaokaa, die wohnen. -ye- wäre Singular." },
+      { type: "translate", q: "die Leute, die hier wohnen (3 Wörter)", a: "Watu wanaokaa hapa" },
+      { type: "translate", q: "Wie du weißt … (2 Wörter)", a: "Kama unavyojua" }
+    ]
+  },
+
+  /* ============================ 19 ============================ */
+  {
+    id: "l19",
+    title: "Ukija — wenn und falls",
+    goal: "Mit -ki- und -sipo- Bedingungen ausdrücken: wenn du kommst, essen wir.",
+    mwalimu: [
+      { sw: "Ukija, tutakula. Usipokuja, nitakusubiri.", de: "Wenn du kommst, essen wir. Wenn du nicht kommst, warte ich auf dich." },
+      { sw: "", de: "Für „wenn“ braucht Swahili kein eigenes Wort. Es setzt <b>-ki-</b> an die Stelle der Zeit — und fertig ist die Bedingung." },
+      { sw: "", de: "Dieselbe Silbe heißt je nach Satz auch <b>während</b>. Ihr merkt: Das Fach für die Zeit ist im Swahili das Fach für alles, was mit dem Verhältnis zur Wirklichkeit zu tun hat." }
+    ],
+    grammar: [
+      { h: "-ki- an der Stelle der Zeit",
+        body: "u-<b>ki</b>-ja = wenn du kommst<br>" +
+              "ni-<b>ki</b>-pata pesa = wenn ich Geld bekomme<br>" +
+              "tu-<b>ki</b>-fika = wenn wir ankommen<br><br>" +
+              "<b>Ukija, tutakula.</b> Wenn du kommst, werden wir essen.<br>" +
+              "<b>Nikipata pesa, nitanunua gari.</b> Wenn ich Geld bekomme, kaufe ich ein Auto.<br><br>" +
+              "Der zweite Satzteil steht meist in der Zukunft — wie im Deutschen." },
+      { h: "Verneint: -sipo-",
+        body: "u-<b>sipo</b>-kuja = wenn du nicht kommst<br>" +
+              "ni-<b>sipo</b>-fika = wenn ich nicht ankomme<br><br>" +
+              "<b>Usipokuja, nitakusubiri.</b> Wenn du nicht kommst, warte ich auf dich.<br><br>" +
+              "Achtung bei einsilbigen Verben: Das <b>ku-</b> bleibt stehen — usipo<b>ku</b>ja, " +
+              "nicht *usipoja. Dieselbe Regel wie in Lektion 4." },
+      { h: "-ki- heißt auch „während“",
+        body: "Steht der -ki-Satz neben einem Hauptsatz, wird daraus ein Nebenher:<br><br>" +
+              "<b>Nilimwona akisoma.</b> Ich sah ihn/sie lesen.<br>" +
+              "<b>Ninapika nikiimba.</b> Ich koche und singe dabei.<br><br>" +
+              "Was gemeint ist, entscheidet der Zusammenhang — im Zweifel: <i>wenn</i>." },
+      { h: "kama und ikiwa: das Wenn zum Danebenstellen",
+        body: "Man kann die Bedingung auch mit einem eigenen Wort einleiten:<br><br>" +
+              "<b>Kama unataka, twende sokoni.</b> Wenn du willst, lass uns zum Markt gehen.<br>" +
+              "<b>Ikiwa mvua inanyesha, tutakaa nyumbani.</b> Falls es regnet, bleiben wir zu Hause.<br><br>" +
+              "<b>kama</b> heißt außerdem <i>wie</i> (Kama unavyojua) und <i>ob</i> " +
+              "(Sijui kama atakuja — Ich weiß nicht, ob er kommt)." }
+    ],
+    vocab: ["kama", "ikiwa", "labda", "kuomba", "kusubiri", "kufika", "mvua", "kupata"],
+    examples: [
+      { sw: "Ukija, tutakula.", de: "Wenn du kommst, essen wir.", gloss: "u-ki-ja" },
+      { sw: "Nikipata pesa, nitanunua gari.", de: "Wenn ich Geld bekomme, kaufe ich ein Auto.", gloss: "ni-ki-pata" },
+      { sw: "Usipokuja, nitakusubiri.", de: "Wenn du nicht kommst, warte ich auf dich.", gloss: "u-sipo-ku-ja" },
+      { sw: "Kama unataka, twende sokoni.", de: "Wenn du willst, lass uns zum Markt gehen.", gloss: "kama + Möglichkeitsform" },
+      { sw: "Nilimwona akisoma.", de: "Ich sah ihn/sie lesen.", gloss: "a-ki-soma = während er/sie las" }
+    ],
+    culture: "<b>Mungu akipenda</b> — so Gott will. Diesen Zusatz hört ihr in Tansania hinter fast " +
+             "jedem Plan, der in der Zukunft liegt. Grammatisch ist es genau das hier: a-ki-penda, " +
+             "wenn er will. Wer ihn mitspricht, klingt sofort vertrauter.",
+    practice: [
+      { instruction: "-ki- kommt an die Stelle, wo sonst -na- oder -ta- steht.",
+        q: "„wenn du kommst“ (ein Wort)", build: "u + ki + ja", a: "Ukija",
+        explain: "u- = du, -ki- = wenn, -ja = kommen. Ganze Bedingung in einem Wort." },
+      { instruction: "Jetzt mit Objekt dahinter. Ich, wenn, bekommen, Geld.",
+        q: "„wenn ich Geld bekomme“ (2 Wörter)", build: "ni + ki + pata + pesa", a: "Nikipata pesa",
+        explain: "Nikipata pesa, nitanunua gari — der zweite Teil steht dann in der Zukunft." },
+      { instruction: "Verneint heißt es -sipo-. Und denk an die Regel für einsilbige Verben: kuja behält sein ku-.",
+        q: "„wenn du nicht kommst“ (ein Wort)", build: "u + sipo + ku + ja", a: "Usipokuja",
+        explain: "Nicht usipoja: kuja ist einsilbig, das ku- bleibt. Genau wie bei nitakuja." }
+    ],
+    exercises: [
+      { type: "translate", q: "wenn du kommst (ein Wort)", a: "Ukija" },
+      { type: "translate", q: "wenn ich Geld bekomme (2 Wörter)", a: "Nikipata pesa" },
+      { type: "choice", q: "Wie heißt „wenn du nicht kommst“?",
+        options: ["Hukija", "Usipokuja", "Usipoja", "Ukijasi"], a: 1,
+        why: "Die verneinte Bedingung ist -sipo-, und kuja ist einsilbig — das ku- bleibt stehen." },
+      { type: "translate", q: "wenn wir ankommen (ein Wort)", a: "Tukifika" },
+      { type: "choice", q: "Was heißt Nilimwona akisoma?",
+        options: ["Ich sah, dass er gelesen hatte", "Ich sah ihn lesen", "Ich las mit ihm", "Ich sah ihn nicht lesen"], a: 1,
+        why: "-ki- neben einem Hauptsatz heißt „während“: akisoma = während er las, ihn lesend." },
+      { type: "translate", q: "So Gott will. (2 Wörter)", a: "Mungu akipenda" }
+    ]
+  },
+
+  /* ============================ 20 ============================ */
+  {
+    id: "l20",
+    title: "Ningependa — wenn ich könnte",
+    goal: "Mit -nge- und -ngali- über Unwirkliches reden — und höflich etwas erbitten.",
+    mwalimu: [
+      { sw: "Ningependa chai, tafadhali.", de: "Ich hätte gern Tee, bitte." },
+      { sw: "", de: "Jetzt das Unwirkliche: <b>hätte</b>, <b>würde</b>, <b>wäre</b>. Im Swahili ist auch das nur eine Silbe im Verb — <b>-nge-</b>." },
+      { sw: "", de: "Und sie ist nebenbei die höflichste Form, die ihr kennt. <b>Ningependa …</b> heißt wörtlich „ich würde mögen“ — genau wie euer „ich hätte gern“." }
+    ],
+    grammar: [
+      { h: "-nge-: unwirklich in der Gegenwart",
+        body: "ni-<b>nge</b>-penda = ich würde mögen<br>" +
+              "ni-<b>nge</b>-kuwa na pesa = wenn ich Geld hätte<br>" +
+              "ni-<b>nge</b>-nunua = ich würde kaufen<br><br>" +
+              "<b>Ningekuwa na pesa, ningenunua gari.</b><br>" +
+              "Hätte ich Geld, würde ich ein Auto kaufen.<br><br>" +
+              "Beachtet: <b>beide</b> Satzhälften bekommen -nge-. Im Deutschen ist das genauso " +
+              "(hätte … würde), nur fällt es dort nicht so auf." },
+      { h: "-ngali-: unwirklich in der Vergangenheit",
+        body: "ni-<b>ngali</b>-jua = hätte ich gewusst<br>" +
+              "ni-<b>ngali</b>-kuja = wäre ich gekommen<br><br>" +
+              "<b>Ningalijua, ningalikuja.</b> Hätte ich es gewusst, wäre ich gekommen.<br><br>" +
+              "Im Alltag hört man oft auch -nge- für beides. Verstehen müsst ihr -ngali-, " +
+              "sagen dürft ihr -nge-." },
+      { h: "Verneint: die verneinte Subjektvorsilbe davor",
+        body: "Kein neues Zeichen — ihr nehmt einfach die verneinte Vorsilbe aus Lektion 5:<br><br>" +
+              "si + nge + penda → <b>singependa</b> ich würde nicht mögen<br>" +
+              "hu + nge + penda → <b>hungependa</b> du würdest nicht mögen<br>" +
+              "ha + nge + penda → <b>hangependa</b> er/sie würde nicht mögen<br><br>" +
+              "<b>Singekwenda leo.</b> Ich würde heute nicht gehen." },
+      { h: "Die höfliche Bitte — das braucht ihr täglich",
+        body: "<b>Ningependa chai.</b> Ich hätte gern Tee.<br>" +
+              "<b>Ningependa kuona …</b> Ich würde gern … sehen.<br>" +
+              "<b>Ungependa kuja?</b> Möchtest du kommen?<br><br>" +
+              "Noch höflicher wird es mit <b>Naomba</b> (ich bitte um): <b>Naomba maji.</b><br>" +
+              "Beides ist im Restaurant und im Büro Gold wert." }
+    ],
+    vocab: ["ingawa", "bila", "kwa hiyo", "hata", "hadi", "badala ya", "kupenda", "kuweza"],
+    examples: [
+      { sw: "Ningependa chai, tafadhali.", de: "Ich hätte gern Tee, bitte.", gloss: "ni-nge-penda" },
+      { sw: "Ningekuwa na pesa, ningenunua gari.", de: "Hätte ich Geld, würde ich ein Auto kaufen.", gloss: "beide Hälften mit -nge-" },
+      { sw: "Ungependa kuja?", de: "Möchtest du kommen?", gloss: "u-nge-penda" },
+      { sw: "Ningalijua, ningalikuja.", de: "Hätte ich es gewusst, wäre ich gekommen.", gloss: "-ngali- = Vergangenheit" },
+      { sw: "Singekwenda leo.", de: "Ich würde heute nicht gehen.", gloss: "si + nge + kwenda" }
+    ],
+    culture: "In Tansania gilt Direktheit schnell als unhöflich. <b>Ningependa</b> und <b>Naomba</b> " +
+             "sind deshalb keine Feinheit, sondern Grundausstattung — im Restaurant, im Büro, beim " +
+             "Nachbarn. Ein <i>Nipe maji</i> (gib mir Wasser) klingt daneben wie ein Befehl.",
+    practice: [
+      { instruction: "Die höflichste Form, die du lernen kannst. Ich – würde – mögen.",
+        q: "„ich hätte gern“ (ein Wort)", build: "ni + nge + penda", a: "Ningependa",
+        explain: "Ningependa chai = Ich hätte gern Tee. Damit bestellt man in ganz Tansania." },
+      { instruction: "Jetzt die Bedingung. „Wenn ich Geld hätte“ — kuwa na heißt haben.",
+        q: "„wenn ich Geld hätte“ (3 Wörter)", build: "ni + nge + kuwa + na + pesa",
+        a: "Ningekuwa na pesa",
+        explain: "kuwa ist einsilbig, das ku- bleibt: ningekuwa. Die zweite Hälfte bekäme auch -nge-." },
+      { instruction: "Verneint brauchst du kein neues Zeichen — nur die verneinte Vorsilbe si-.",
+        q: "„ich würde nicht gehen“ (ein Wort)", build: "si + nge + kwenda", a: "Singekwenda",
+        explain: "si + nge + kwenda. Genauso hungependa, hangependa." }
+    ],
+    exercises: [
+      { type: "translate", q: "Ich hätte gern Tee. (2 Wörter)", a: "Ningependa chai" },
+      { type: "translate", q: "Möchtest du kommen? (2 Wörter)", a: "Ungependa kuja" },
+      { type: "choice", q: "Wie verneint man ningependa?",
+        options: ["ningependi", "sitangependa", "singependa", "hakuningependa"], a: 2,
+        why: "Verneinte Subjektvorsilbe si- plus -nge-: singependa. Ein eigenes Verneinungszeichen gibt es hier nicht." },
+      { type: "translate", q: "wenn ich Geld hätte (3 Wörter)", a: "Ningekuwa na pesa" },
+      { type: "choice", q: "Was ist der Unterschied zwischen -nge- und -ngali-?",
+        options: ["-ngali- ist höflicher",
+                  "-ngali- meint Unwirkliches in der Vergangenheit",
+                  "-ngali- ist die Verneinung",
+                  "Es gibt keinen"], a: 1,
+        why: "Ningependa = ich würde mögen (jetzt). Ningalijua = hätte ich gewusst (damals)." },
+      { type: "translate", q: "Ich bitte um Wasser. (2 Wörter)", a: "Naomba maji" }
+    ]
+  },
+
+  /* ============================ 21 ============================ */
+  {
+    id: "l21",
+    title: "Ninaumwa — beim Arzt",
+    goal: "Beschwerden benennen, nach einem Arzt fragen und Anweisungen verstehen.",
+    mwalimu: [
+      { sw: "Unaumwa nini? — Ninaumwa kichwa.", de: "Wo tut es weh? — Ich habe Kopfschmerzen." },
+      { sw: "", de: "Die letzten vier Lektionen sind praktisch. Kein neues Grundgerüst mehr, sondern die Sätze, die ihr in Dar wirklich braucht — angefangen beim wichtigsten Fall: ihr fühlt euch schlecht." },
+      { sw: "", de: "Merkt euch vor allem eines: <b>Ninaumwa</b>. Das ist ein Passiv (Lektion 14) — wörtlich „ich werde geschmerzt“. Dahinter kommt einfach das Körperteil." }
+    ],
+    grammar: [
+      { h: "Ninaumwa + Körperteil",
+        body: "<b>Ninaumwa kichwa.</b> Ich habe Kopfschmerzen.<br>" +
+              "<b>Ninaumwa tumbo.</b> Ich habe Bauchschmerzen.<br>" +
+              "<b>Ninaumwa koo.</b> Ich habe Halsschmerzen.<br>" +
+              "<b>Ninaumwa jino.</b> Ich habe Zahnschmerzen.<br><br>" +
+              "Gefragt wird mit <b>Unaumwa nini?</b> — wörtlich: Was schmerzt dich?<br>" +
+              "Auch möglich: <b>Ninaumwa na kichwa</b> — mit na, dasselbe in Grün." },
+      { h: "Nina + Krankheit",
+        body: "Für Zustände statt Schmerzen nehmt ihr schlicht „haben“:<br><br>" +
+              "<b>Nina homa.</b> Ich habe Fieber.<br>" +
+              "<b>Nina mafua.</b> Ich bin erkältet.<br>" +
+              "<b>Nina kikohozi.</b> Ich habe Husten.<br>" +
+              "<b>Ninaharisha.</b> Ich habe Durchfall. (eigenes Verb)<br><br>" +
+              "Und der Satz, der im Zweifel alles öffnet: <b>Nahitaji daktari.</b>" },
+      { h: "Was der Arzt sagt — der Möglichkeitsmodus als Anweisung",
+        body: "Anweisungen kommen fast immer in der Form auf <b>-e</b> aus Lektion 4:<br><br>" +
+              "<b>Unywe dawa mara tatu kwa siku.</b> Nimm die Medizin dreimal täglich.<br>" +
+              "<b>Upumzike.</b> Ruh dich aus.<br>" +
+              "<b>Tupime malaria.</b> Lass uns auf Malaria testen.<br><br>" +
+              "Ihr müsst das nicht bilden können — aber erkennen solltet ihr es." },
+      { h: "Gute Besserung",
+        body: "<b>Pole sana.</b> Mein Beileid, gute Besserung — das tansanische Allzweckwort " +
+              "für Mitgefühl.<br>" +
+              "<b>Pona haraka!</b> Werd schnell gesund!<br>" +
+              "<b>Umepona?</b> Bist du wieder gesund?<br><br>" +
+              "<i>Pole</i> hört ihr auch, wenn ihr stolpert, schwer tragt oder im Stau steht." }
+    ],
+    vocab: ["kuumwa", "mgonjwa", "kikohozi", "mafua", "kuharisha", "kupima", "sindano",
+            "kupona", "kupumzika", "daktari", "dawa", "hospitali"],
+    examples: [
+      { sw: "Ninaumwa kichwa.", de: "Ich habe Kopfschmerzen.", gloss: "ni-na-umwa = ich werde geschmerzt" },
+      { sw: "Nina homa tangu jana.", de: "Ich habe seit gestern Fieber.", gloss: "nina = ich habe" },
+      { sw: "Nahitaji daktari.", de: "Ich brauche einen Arzt.", gloss: "na-hitaji — Kurzform von ninahitaji" },
+      { sw: "Tupime malaria.", de: "Lass uns auf Malaria testen.", gloss: "tu-pim-e — Möglichkeitsmodus" },
+      { sw: "Unywe dawa mara tatu kwa siku.", de: "Nimm die Medizin dreimal täglich.", gloss: "u-nyw-e = du sollst trinken" }
+    ],
+    culture: "Bei Fieber wird in Dar fast immer zuerst auf Malaria getestet — <b>kipimo cha malaria</b>, " +
+             "Ergebnis in einer Viertelstunde. Das ist Routine und kein Drama. Private Kliniken sind " +
+             "für Ausländer der übliche Weg; nehmt eine Versicherungskarte und Bargeld mit.",
+    practice: [
+      { instruction: "Das Passiv aus Lektion 14, dahinter das Körperteil. Mehr braucht es nicht.",
+        q: "„Ich habe Kopfschmerzen.“ (2 Wörter)", build: "ni + na + umwa + kichwa", a: "Ninaumwa kichwa",
+        explain: "Wörtlich: ich werde am Kopf geschmerzt. Genauso: Ninaumwa tumbo, Ninaumwa jino." },
+      { instruction: "Für einen Zustand statt eines Schmerzes nimmst du einfach „haben“.",
+        q: "„Ich habe Fieber.“ (2 Wörter)", build: "ni + na + homa", a: "Nina homa",
+        explain: "nina = ich habe. Genauso Nina mafua, Nina kikohozi." },
+      { instruction: "Und der Satz, der im Notfall zählt.",
+        q: "„Ich brauche einen Arzt.“ (2 Wörter)", build: "ni + na + hitaji + daktari",
+        a: "Ninahitaji daktari",
+        explain: "Im Alltag oft verkürzt zu Nahitaji daktari. Beides versteht jeder." }
+    ],
+    exercises: [
+      { type: "translate", q: "Ich habe Kopfschmerzen. (2 Wörter)", a: "Ninaumwa kichwa" },
+      { type: "translate", q: "Ich brauche einen Arzt. (2 Wörter)", a: "Ninahitaji daktari, Nahitaji daktari" },
+      { type: "choice", q: "Was heißt Unaumwa nini?",
+        options: ["Wer ist krank?", "Was schmerzt dich?", "Warum bist du krank?", "Wann wurdest du krank?"], a: 1,
+        why: "kuumwa = Schmerzen haben, nini = was. Die übliche Frage des Arztes." },
+      { type: "translate", q: "Ich habe Fieber. (2 Wörter)", a: "Nina homa" },
+      { type: "choice", q: "Der Arzt sagt: Unywe dawa. Was sollst du tun?",
+        options: ["Die Medizin kaufen", "Die Medizin nehmen", "Die Medizin zurückbringen", "Auf die Medizin warten"], a: 1,
+        why: "u-nyw-e: der Möglichkeitsmodus von kunywa (trinken) — du sollst sie einnehmen." },
+      { type: "translate", q: "Werd schnell gesund! (2 Wörter)", a: "Pona haraka" }
+    ]
+  },
+
+  /* ============================ 22 ============================ */
+  {
+    id: "l22",
+    title: "Bomba limeharibika — Wohnen und Reparieren",
+    goal: "Über Miete, Strom und Wasser reden und melden, wenn etwas kaputt ist.",
+    mwalimu: [
+      { sw: "Hakuna maji leo. Bomba limeharibika.", de: "Heute gibt es kein Wasser. Das Rohr ist kaputt." },
+      { sw: "", de: "Willkommen im tansanischen Alltag. Strom weg, Wasser weg, etwas kaputt — dafür braucht ihr zwei Dinge: <b>kuna / hakuna</b> und die Zustandsform aus Lektion 16." },
+      { sw: "", de: "Die gute Nachricht: Beides könnt ihr schon. Hier setzen wir es nur zusammen." }
+    ],
+    grammar: [
+      { h: "kuna und hakuna — es gibt, es gibt nicht",
+        body: "<b>Kuna maji.</b> Es gibt Wasser.<br>" +
+              "<b>Hakuna maji.</b> Es gibt kein Wasser.<br>" +
+              "<b>Kuna tatizo.</b> Es gibt ein Problem.<br>" +
+              "<b>Hakuna matata.</b> Kein Problem. — ja, genau das.<br><br>" +
+              "Fragend einfach mit der Stimme heben: <b>Kuna maji?</b> Gibt es Wasser?" },
+      { h: "Was kaputt ist: die Zustandsform",
+        body: "Aus Lektion 16, jetzt praktisch:<br><br>" +
+              "<b>Bomba limeharibika.</b> Der Wasserhahn ist kaputt. (Kl. 5 → li-)<br>" +
+              "<b>Umeme umekatika.</b> Der Strom ist weg. (Kl. 11 → u-)<br>" +
+              "<b>Mlango umevunjika.</b> Die Tür ist kaputt. (Kl. 3 → u-)<br>" +
+              "<b>Taa haiwaki.</b> Die Lampe geht nicht an.<br><br>" +
+              "Niemand ist schuld — deshalb -ika und nicht das Passiv." },
+      { h: "Miete und Vermieter",
+        body: "<b>Ninapanga nyumba Mikocheni.</b> Ich miete ein Haus in Mikocheni.<br>" +
+              "<b>Kodi ni shilingi ngapi kwa mwezi?</b> Wie hoch ist die Miete pro Monat?<br>" +
+              "<b>Nitalipa kodi kesho.</b> Ich zahle die Miete morgen.<br>" +
+              "<b>Mwenye nyumba anakuja leo.</b> Der Vermieter kommt heute.<br><br>" +
+              "<i>kodi</i> heißt übrigens auch Steuer — der Zusammenhang klärt es." },
+      { h: "Den Handwerker holen",
+        body: "<b>Ninahitaji fundi.</b> Ich brauche einen Handwerker.<br>" +
+              "<b>Fundi bomba</b> Klempner · <b>fundi umeme</b> Elektriker<br>" +
+              "<b>Unaweza kuja leo?</b> Kannst du heute kommen?<br>" +
+              "<b>Itagharimu kiasi gani?</b> Was wird es kosten?<br><br>" +
+              "Preis <b>vor</b> der Arbeit klären — das ist keine Unhöflichkeit, sondern üblich." }
+    ],
+    vocab: ["kupanga", "kodi", "mwenye nyumba", "fundi", "bomba", "umeme", "maji",
+            "kuharibika", "nyumba", "mlango"],
+    examples: [
+      { sw: "Hakuna maji leo.", de: "Heute gibt es kein Wasser.", gloss: "hakuna = es gibt nicht" },
+      { sw: "Bomba limeharibika.", de: "Der Wasserhahn ist kaputt.", gloss: "li-me-harib-ika — Kl. 5" },
+      { sw: "Umeme umekatika.", de: "Der Strom ist weg.", gloss: "u-me-kat-ika" },
+      { sw: "Ninahitaji fundi bomba.", de: "Ich brauche einen Klempner.", gloss: "fundi + Fachgebiet" },
+      { sw: "Kodi ni shilingi ngapi kwa mwezi?", de: "Wie hoch ist die Miete pro Monat?", gloss: "ngapi = wie viel" }
+    ],
+    culture: "Stromausfälle heißen in Dar <b>mgao</b> — planmäßige Abschaltung. Viele Häuser haben " +
+             "Wassertanks auf dem Dach, weil die Leitung nicht durchgehend liefert. Wer ein Haus " +
+             "besichtigt, fragt deshalb zuerst: <b>Kuna tanki la maji? Kuna jenereta?</b>",
+    practice: [
+      { instruction: "Es gibt nicht — ein Wort, das du täglich brauchen wirst.",
+        q: "„Es gibt kein Wasser.“ (2 Wörter)", build: "hakuna + maji", a: "Hakuna maji",
+        explain: "kuna = es gibt, hakuna = es gibt nicht. Hakuna matata kennst du schon." },
+      { instruction: "Jetzt die Zustandsform aus Lektion 16. bomba ist Klasse 5 — welche Vorsilbe?",
+        q: "„Der Wasserhahn ist kaputt.“ (2 Wörter)", build: "bomba + li + me + harib + ika",
+        a: "Bomba limeharibika",
+        explain: "Kl. 5 → li-. Und -ika, weil niemand schuld ist: es ist eben kaputtgegangen." },
+      { instruction: "Und jetzt holst du Hilfe.",
+        q: "„Ich brauche einen Handwerker.“ (2 Wörter)", build: "ni + na + hitaji + fundi",
+        a: "Ninahitaji fundi",
+        explain: "Genauer wird es mit dem Fach: fundi bomba (Klempner), fundi umeme (Elektriker)." }
+    ],
+    exercises: [
+      { type: "translate", q: "Es gibt kein Wasser. (2 Wörter)", a: "Hakuna maji" },
+      { type: "translate", q: "Der Strom ist weg. (2 Wörter)", a: "Umeme umekatika" },
+      { type: "choice", q: "Warum heißt es Bomba limeharibika und nicht limeharibiwa?",
+        options: ["Weil bomba Klasse 5 ist",
+                  "Weil niemand es kaputt gemacht hat — es ist von selbst kaputtgegangen",
+                  "Weil es Vergangenheit ist",
+                  "Weil kuharibu unregelmäßig ist"], a: 1,
+        why: "-ika ist die Zustandsform. -iwa (Passiv) hieße: jemand hat es kaputt gemacht." },
+      { type: "translate", q: "Ich brauche einen Klempner. (3 Wörter)", a: "Ninahitaji fundi bomba" },
+      { type: "translate", q: "Der Vermieter kommt heute. (4 Wörter)", a: "Mwenye nyumba anakuja leo" },
+      { type: "choice", q: "Was heißt kodi?",
+        options: ["Schlüssel", "Miete", "Vertrag", "Nachbar"], a: 1,
+        why: "kodi = Miete, im anderen Zusammenhang auch Steuer. Schlüssel wäre ufunguo." }
+    ]
+  },
+
+  /* ============================ 23 ============================ */
+  {
+    id: "l23",
+    title: "Kazini — Arbeit und Papiere",
+    goal: "Im Büro und bei Behörden zurechtkommen: Termine, Dokumente, höfliche Bitten.",
+    mwalimu: [
+      { sw: "Naomba hati yangu. Mkutano ni lini?", de: "Ich bitte um mein Dokument. Wann ist das Treffen?" },
+      { sw: "", de: "Behörden und Büros reden im <b>Passiv</b> — Lektion 14 zahlt sich hier aus. <i>Imefungwa</i> (geschlossen), <i>imeandikwa</i> (geschrieben), <i>inahitajika</i> (wird benötigt)." },
+      { sw: "", de: "Und ihr redet höflich: <b>Naomba …</b> öffnet mehr Türen als jede Forderung." }
+    ],
+    grammar: [
+      { h: "Naomba — die Bitte, die immer passt",
+        body: "<b>Naomba hati yangu.</b> Ich bitte um mein Dokument.<br>" +
+              "<b>Naomba kuongea na …</b> Ich bitte darum, mit … zu sprechen.<br>" +
+              "<b>Naomba msaada.</b> Ich bitte um Hilfe.<br><br>" +
+              "Wörtlich heißt kuomba bitten oder beten. Im Alltag ist <i>Naomba</i> das " +
+              "freundliche „Könnte ich bitte …“." },
+      { h: "Nach Zeit und Ort fragen",
+        body: "<b>Mkutano ni lini?</b> Wann ist das Treffen?<br>" +
+              "<b>Ofisi iko wapi?</b> Wo ist das Büro?<br>" +
+              "<b>Mnafungua saa ngapi?</b> Um wie viel Uhr öffnet ihr?<br>" +
+              "<b>Nitarudi kesho asubuhi.</b> Ich komme morgen früh wieder.<br><br>" +
+              "Alles bekannt: <i>ni lini</i>, <i>iko wapi</i>, <i>saa ngapi</i> aus Lektion 11." },
+      { h: "Behördensprache ist Passivsprache",
+        body: "<b>Imefungwa.</b> Es ist geschlossen.<br>" +
+              "<b>Mkataba umeandikwa.</b> Der Vertrag ist geschrieben.<br>" +
+              "<b>Hati inahitajika.</b> Das Dokument wird benötigt.<br>" +
+              "<b>Kibali kimetolewa.</b> Die Genehmigung wurde erteilt.<br><br>" +
+              "Wer das erkennt, versteht Aushänge und Schalterauskünfte." },
+      { h: "Die Papiere, die euch begleiten werden",
+        body: "<b>pasipoti</b> Reisepass · <b>hati</b> Dokument, Urkunde<br>" +
+              "<b>kibali cha kazi</b> Arbeitserlaubnis · <b>kibali cha ukaazi</b> Aufenthaltserlaubnis<br>" +
+              "<b>mkataba</b> Vertrag · <b>nakala</b> Kopie<br><br>" +
+              "<b>Nina kibali cha kazi.</b> Ich habe eine Arbeitserlaubnis." }
+    ],
+    vocab: ["mkataba", "hati", "pasipoti", "kibali", "kazi", "ofisi", "mkutano",
+            "kuomba", "mshahara", "barua"],
+    examples: [
+      { sw: "Naomba hati yangu.", de: "Ich bitte um mein Dokument.", gloss: "na-omba = ich bitte" },
+      { sw: "Mkutano ni lini?", de: "Wann ist das Treffen?", gloss: "ni lini = ist wann" },
+      { sw: "Mkataba umeandikwa.", de: "Der Vertrag ist geschrieben.", gloss: "u-me-andik-wa — Kl. 3" },
+      { sw: "Ofisi imefungwa leo.", de: "Das Büro ist heute geschlossen.", gloss: "i-me-fung-wa — Kl. 9" },
+      { sw: "Nina kibali cha kazi.", de: "Ich habe eine Arbeitserlaubnis.", gloss: "cha — Kl. 7 Besitz" }
+    ],
+    culture: "Behördengänge in Tansania brauchen Geduld und Papier: Bringt immer <b>nakala</b> " +
+             "(Kopien) mit, am besten mehrere. Und grüßt am Schalter erst richtig — " +
+             "<i>Shikamoo</i> bei älteren Beamten — bevor ihr euer Anliegen nennt. " +
+             "Wer direkt mit der Sache anfängt, wartet länger.",
+    practice: [
+      { instruction: "Die höfliche Bitte. Ein Wort, das im Büro jede Tür öffnet.",
+        q: "„Ich bitte um ein Dokument.“ (2 Wörter)", build: "na + omba + hati", a: "Naomba hati",
+        explain: "Naomba = ich bitte um. Höflicher als Nataka (ich will) und überall üblich." },
+      { instruction: "Jetzt Behördensprache: Passiv, Klasse 3 — mkataba bekommt u-.",
+        q: "„Der Vertrag ist geschrieben.“ (2 Wörter)", build: "mkataba + u + me + andik + wa",
+        a: "Mkataba umeandikwa",
+        explain: "mkataba gehört zu Kl. 3, also u-. -me- für das fertige Ergebnis, -wa fürs Passiv." },
+      { instruction: "Und die Frage nach dem Termin — ganz ohne Verb.",
+        q: "„Wann ist das Treffen?“ (3 Wörter)", build: "mkutano + ni + lini", a: "Mkutano ni lini",
+        explain: "ni = ist, lini = wann. Im Swahili braucht diese Frage kein weiteres Verb." }
+    ],
+    exercises: [
+      { type: "translate", q: "Ich bitte um mein Dokument. (3 Wörter)", a: "Naomba hati yangu" },
+      { type: "translate", q: "Wann ist das Treffen? (3 Wörter)", a: "Mkutano ni lini" },
+      { type: "choice", q: "Am Schalter steht Imefungwa. Was heißt das?",
+        options: ["Es ist offen", "Es ist geschlossen", "Es ist besetzt", "Es ist kaputt"], a: 1,
+        why: "kufunga = schließen, kufungwa = geschlossen werden. Imefungwa: es ist geschlossen." },
+      { type: "translate", q: "Das Büro ist heute geschlossen. (3 Wörter)", a: "Ofisi imefungwa leo" },
+      { type: "choice", q: "Was ist ein kibali cha kazi?",
+        options: ["Ein Arbeitsvertrag", "Eine Arbeitserlaubnis", "Ein Gehaltszettel", "Ein Bürogebäude"], a: 1,
+        why: "kibali = Genehmigung, cha kazi = der Arbeit. Der Vertrag wäre mkataba." },
+      { type: "translate", q: "Ich habe eine Arbeitserlaubnis. (4 Wörter)", a: "Nina kibali cha kazi" }
+    ]
+  },
+
+  /* ============================ 24 ============================ */
+  {
+    id: "l24",
+    title: "Safarini — unterwegs in Tansania",
+    goal: "Fahrkarten kaufen, nach Preis und Ziel fragen, mit Gepäck ankommen.",
+    mwalimu: [
+      { sw: "Nauli ni ngapi? Basi hili linakwenda wapi?", de: "Was kostet die Fahrt? Wohin fährt dieser Bus?" },
+      { sw: "", de: "Die letzte Lektion bringt euch aus dem Haus: Daladala, Bus, Fähre nach Sansibar. Alles, was ihr dafür braucht, habt ihr — wir setzen es nur zusammen." },
+      { sw: "", de: "Und dann, rafiki zangu, seid ihr durch. <b>Hongera sana!</b> Der Rest ist Übung, und die macht ihr am besten dort: <i>Karibuni Tanzania.</i>" }
+    ],
+    grammar: [
+      { h: "Die vier Fragen am Busbahnhof",
+        body: "<b>Nauli ni ngapi?</b> Was kostet die Fahrt?<br>" +
+              "<b>Basi linaondoka saa ngapi?</b> Wann fährt der Bus ab?<br>" +
+              "<b>Basi hili linakwenda wapi?</b> Wohin fährt dieser Bus?<br>" +
+              "<b>Safari inachukua muda gani?</b> Wie lange dauert die Fahrt?<br><br>" +
+              "Alles bekannte Bausteine: ngapi, saa ngapi, wapi, gani." },
+      { h: "Die Klasse macht den Unterschied",
+        body: "Fahrzeuge sind keine Personen — die Vorsilbe richtet sich nach der Klasse:<br><br>" +
+              "<b>basi</b> (Kl. 5) → <b>li</b>naondoka<br>" +
+              "<b>daladala</b> (Kl. 9) → <b>i</b>naondoka<br>" +
+              "<b>mabasi</b> (Kl. 6) → <b>ya</b>naondoka<br>" +
+              "<b>gari</b> (Kl. 5) → <b>li</b>naenda<br><br>" +
+              "Wer hier a- sagt, macht aus dem Bus einen Menschen." },
+      { h: "Ticket und Gepäck",
+        body: "<b>Naomba tikiti mbili za Moshi.</b> Ich bitte um zwei Tickets nach Moshi.<br>" +
+              "<b>Nina mzigo mmoja.</b> Ich habe ein Gepäckstück.<br>" +
+              "<b>Mzigo wangu uko wapi?</b> Wo ist mein Gepäck?<br>" +
+              "<b>Abiria wote wapande.</b> Alle Fahrgäste sollen einsteigen.<br><br>" +
+              "Im Daladala zahlt ihr beim Schaffner, im Bus vorher am Schalter." },
+      { h: "Unterwegs sagen, was ihr wollt",
+        body: "<b>Shusha hapa, tafadhali.</b> Lass mich bitte hier raus.<br>" +
+              "<b>Nipeleke Kariakoo.</b> Bring mich nach Kariakoo.<br>" +
+              "<b>Twende polepole.</b> Lass uns langsam fahren.<br>" +
+              "<b>Simama hapa.</b> Halt hier.<br><br>" +
+              "<i>Polepole</i> ist übrigens ein vollwertiger Fahrstil-Wunsch und wird ernst genommen." }
+    ],
+    vocab: ["tikiti", "nauli", "dereva", "abiria", "mzigo", "basi", "safari",
+            "kivuko", "stendi", "kuondoka"],
+    examples: [
+      { sw: "Nauli ni ngapi?", de: "Was kostet die Fahrt?", gloss: "ngapi = wie viel" },
+      { sw: "Basi hili linakwenda wapi?", de: "Wohin fährt dieser Bus?", gloss: "basi Kl. 5 → li-" },
+      { sw: "Naomba tikiti mbili za Moshi.", de: "Ich bitte um zwei Tickets nach Moshi.", gloss: "mbili — Kl. 10" },
+      { sw: "Mzigo wangu uko wapi?", de: "Wo ist mein Gepäck?", gloss: "mzigo Kl. 3 → wangu, uko" },
+      { sw: "Basi linaondoka saa mbili.", de: "Der Bus fährt um acht Uhr ab.", gloss: "Swahili-Uhr: saa mbili = 8 Uhr" }
+    ],
+    culture: "Die Fähre nach Sansibar und die Kigamboni-Fähre sind zwei Welten: Die eine bucht man " +
+             "mit Pass am Schalter, die andere besteigt man mit ein paar Hundert Schilling in der " +
+             "Hand. Für Überlandfahrten gilt: Morgens losfahren. Wer nachmittags startet, steht " +
+             "im Stau von Dar, bevor die Reise überhaupt anfängt.",
+    practice: [
+      { instruction: "Die wichtigste Frage überhaupt — und sie kommt ohne Verb aus.",
+        q: "„Was kostet die Fahrt?“ (3 Wörter)", build: "nauli + ni + ngapi", a: "Nauli ni ngapi",
+        explain: "nauli = Fahrpreis, ni = ist, ngapi = wie viel. Dieselbe Bauweise wie Bei gani?" },
+      { instruction: "Jetzt aufpassen: basi gehört zu Klasse 5. Welche Vorsilbe bekommt das Verb?",
+        q: "„Wohin fährt dieser Bus?“ (4 Wörter)", build: "basi + hili + li + na + kw + enda + wapi",
+        a: "Basi hili linakwenda wapi",
+        explain: "Kl. 5 → li-, und das Demonstrativ heißt hili. Mit a- würde der Bus zum Menschen." },
+      { instruction: "Und zum Abschluss dein Gepäck. mzigo ist Klasse 3 — mein heißt dann wangu.",
+        q: "„Wo ist mein Gepäck?“ (3 Wörter)", build: "mzigo + wangu + u + ko + wapi",
+        a: "Mzigo wangu uko wapi",
+        explain: "Kl. 3: wangu und uko. Dieselbe Kongruenz wie in mti wangu." }
+    ],
+    exercises: [
+      { type: "translate", q: "Was kostet die Fahrt? (3 Wörter)", a: "Nauli ni ngapi" },
+      { type: "choice", q: "Welche Vorsilbe bekommt basi (Klasse 5) im Verb?",
+        options: ["a-", "i-", "li-", "ya-"], a: 2,
+        why: "Klasse 5 hat li-: Basi linaondoka. a- wäre eine Person, i- Klasse 9, ya- der Plural." },
+      { type: "translate", q: "Wohin fährt dieser Bus? (4 Wörter)", a: "Basi hili linakwenda wapi" },
+      { type: "translate", q: "Wo ist mein Gepäck? (3 Wörter)", a: "Mzigo wangu uko wapi" },
+      { type: "translate", q: "Ich bitte um zwei Tickets. (3 Wörter)", a: "Naomba tikiti mbili" },
+      { type: "choice", q: "Der Bus fährt saa mbili. Wann ist das?",
+        options: ["Um 2 Uhr", "Um 8 Uhr", "Um 10 Uhr", "Um 12 Uhr"], a: 1,
+        why: "Die Swahili-Uhr beginnt bei Sonnenaufgang: saa mbili = zwei Stunden nach 6 Uhr = 8 Uhr." }
+    ]
   }
 ];

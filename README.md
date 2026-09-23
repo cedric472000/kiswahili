@@ -21,8 +21,8 @@ benutzen, sonst liegt der Fortschritt woanders.
 
 | Bereich | Inhalt |
 |---|---|
-| **Lektionen** | 12 aufeinander aufbauende Einheiten, je ~21 Schritte (siehe unten) |
-| **Vokabeln** | 334 Einträge in 13 Themen, Spaced Repetition nach Leitner (7 Fächer) |
+| **Lektionen** | 24 aufeinander aufbauende Einheiten, je ~21 Schritte (siehe unten) |
+| **Vokabeln** | 395 Einträge in 13 Themen, Spaced Repetition nach Leitner (7 Fächer) |
 | **Grammatik** | 15 durchsuchbare Kapitel, inkl. Verberweiterungen und Relativsätzen |
 | **Konjugator** | 44 Verben × 10 Zeiten × Person × Objekt × Verneinung, mit Zerlegung |
 | **Drills** | Konjugations-Drill und Nomenklassen-Drill (Plural raten) |
@@ -52,6 +52,25 @@ einer Lesefassung ohne Übungen — zum Nachschlagen und Wiederholen.
 
 Alle Inhalte folgen dem tansanischen Standard (*Kiswahili sanifu*), nicht dem
 kenianischen — das ist der Unterschied, der vor Ort auffällt.
+
+### Der Kursaufbau
+
+Die 24 Lektionen stehen in sechs Abschnitten; die Lektionsliste zeigt sie
+als Kapitel (`LEKTIONSGRUPPEN` in `js/app.js`):
+
+| | Lektionen | Inhalt |
+|---|---|---|
+| **Erste Worte** | 1–3 | Grüßen, sich vorstellen, Nomenklassen |
+| **Das Verb** | 4–7 | Baukasten, Verneinung, Zeitformen, Perfekt |
+| **Alltag in Dar** | 8–12 | Adjektive, Besitz, Zahlen, Uhrzeit, Orte |
+| **Verberweiterungen** | 13–16 | -ia/-ea für jemanden, Passiv -wa, Veranlassung -sha, Zustand -ika und Gegenseitigkeit -ana |
+| **Sätze verbinden** | 17–20 | Relativsätze mit amba- und im Verb, Bedingungen mit -ki-/-sipo-, Unwirkliches mit -nge-/-ngali- |
+| **Draußen in Dar** | 21–24 | Beim Arzt, Wohnen und Reparieren, Arbeit und Papiere, unterwegs |
+
+Die ersten zwölf bauen das Grundgerüst, die zweiten zwölf machen daraus
+eine Sprache, mit der man Nebensätze bildet und Behördenaushänge liest.
+Die letzten vier bringen kaum neue Grammatik, sondern setzen Bekanntes in
+den Situationen zusammen, die in Dar wirklich vorkommen.
 
 ## Welche Vokabeln wann drankommen
 
@@ -261,7 +280,14 @@ gehalten, nicht als Datenbank.
 ```
 
 `tag` ist optional: `"tz"` markiert typisch Tansanisches, `"dar"` speziell
-Stadtsprachliches. Die `id` wird automatisch vergeben.
+Stadtsprachliches.
+
+> **Neue Wörter immer unten anhängen — nie dazwischenschieben.**
+> Die `id` wird am Dateiende aus der Position im Array gebildet
+> (`v.id = "v" + i`). Wer mittendrin einfügt, verschiebt alle folgenden ids.
+> Der Lernfortschritt auf den Geräten ist nach genau diesen ids gespeichert
+> und wäre damit zerrissen: Gelerntes verschwindet, fremde Wörter stehen
+> plötzlich in Fach 5.
 
 **Verb hinzufügen** — `data/verbs.js`:
 
@@ -352,9 +378,9 @@ oben nicht können: die tatsächliche Bedienung im Browser.
 index.html          Einstieg: Gerüst (Navigationsspalte, Tab-Leiste,
                     Inhaltsspalte) und lädt alles in fester Reihenfolge
 css/style.css       Hell- und Dunkelmodus, mobil zuerst
-data/vocab.js       334 Vokabeln mit Klasse und Plural
+data/vocab.js       395 Vokabeln mit Klasse und Plural (nur unten anhängen!)
 data/verbs.js       Konjugationstabellen + 44 Verben
-data/lessons.js     12 Lektionen: Mwalimu, Grammatik, Wortschatz,
+data/lessons.js     24 Lektionen: Mwalimu, Grammatik, Wortschatz,
                     geführte Übungen (practice) und Abfrage (exercises)
 data/grammar.js     15 Nachschlagekapitel
 data/methali.js     14 Sprichwörter fürs Kanga-Band (Sprichwort des Tages)

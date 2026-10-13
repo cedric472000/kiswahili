@@ -96,6 +96,10 @@ pruefe(existiert("icons/apple-touch-icon.png"), "icons/apple-touch-icon.png fehl
 pruefe(/cache: ?["']reload["']/.test(sw),
        "sw.js holt die Dateien beim Installieren ohne cache:\"reload\" — dann legt der neue " +
        "Worker die alten Dateien aus dem HTTP-Cache ab und kein Update kommt je an.");
+pruefe(/res\.ok/.test(sw),
+       "sw.js prueft die Antwort beim Seitenaufruf nicht auf res.ok — eine 404 oder 500 " +
+       "loest kein .catch aus, die App zeigte dann die Fehlerseite des Servers statt der " +
+       "Fassung aus dem Offline-Cache.");
 pruefe(/controllerchange/.test(html),
        "index.html lädt nach dem Wechsel auf einen neuen Worker nicht neu — neue Inhalte " +
        "erschienen erst beim übernächsten Öffnen.");

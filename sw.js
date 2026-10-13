@@ -15,7 +15,7 @@
    DATEIEN muss zu dem passen, was index.html laedt — test/test-pwa.js
    prueft genau das.                                                        */
 
-var VERSION = "kiswahili-v4";
+var VERSION = "kiswahili-v5";
 
 var DATEIEN = [
   "./",
@@ -76,12 +76,20 @@ self.addEventListener("fetch", function (e) {
 
   if (req.mode === "navigate") {
     e.respondWith(
-      fetch(req).then(function (res) { ablegen(req, res.clone()); return res; })
-        .catch(function () {
-          return caches.match(req).then(function (treffer) {
-            return treffer || caches.match("./index.html");
-          });
-        })
+      fetch(req).then(function (res) {
+        /* Eine 404 oder 500 ist eine gueltige Antwort und loest kein
+           .catch aus — ohne diese Pruefung zeigte die installierte App
+           die Fehlerseite des Servers, obwohl sie vollstaendig im Cache
+           liegt. Genau das passierte, als GitHub Pages einmal
+           abgeschaltet war. */
+        if (!res || !res.ok) throw new Error("Server antwortet mit " + (res && res.status));
+        ablegen(req, res.clone());
+        return res;
+      }).catch(function () {
+        return caches.match(req).then(function (treffer) {
+          return treffer || caches.match("./index.html");
+        });
+      })
     );
     return;
   }

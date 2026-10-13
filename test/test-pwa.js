@@ -96,6 +96,15 @@ pruefe(existiert("icons/apple-touch-icon.png"), "icons/apple-touch-icon.png fehl
 pruefe(/cache: ?["']reload["']/.test(sw),
        "sw.js holt die Dateien beim Installieren ohne cache:\"reload\" — dann legt der neue " +
        "Worker die alten Dateien aus dem HTTP-Cache ab und kein Update kommt je an.");
+// Die im Profil angezeigte Fassung muss der des Service Workers entsprechen,
+// sonst behauptet die App etwas, das nicht stimmt.
+var appQuelle = read(BASE + "js\\app.js");
+var fApp = appQuelle.match(/var FASSUNG\s*=\s*"([^"]+)"/);
+var fSw  = sw.match(/var VERSION\s*=\s*"kiswahili-([^"]+)"/);
+pruefe(fApp && fSw && fApp[1] === fSw[1],
+       "Fassung in app.js (" + (fApp ? fApp[1] : "fehlt") + ") und sw.js (" +
+       (fSw ? fSw[1] : "fehlt") + ") stimmen nicht ueberein.");
+
 pruefe(/res\.ok/.test(sw),
        "sw.js prueft die Antwort beim Seitenaufruf nicht auf res.ok — eine 404 oder 500 " +
        "loest kein .catch aus, die App zeigte dann die Fehlerseite des Servers statt der " +

@@ -2,6 +2,10 @@
 (function () {
   "use strict";
 
+  /* Fassung der App. Muss zur VERSION in sw.js passen — test-pwa.js
+     prueft das, damit die Anzeige im Profil nicht luegt. */
+  var FASSUNG = "v5";
+
   var app, rail, tabbar, topbar;
 
   /* ------------------------------------------------------------------ */
@@ -1473,7 +1477,26 @@
           '<button class="btn btn-danger" id="doReset">Fortschritt zurücksetzen</button>' +
         "</div>" +
         '<div id="resetBox"></div>' +
-      "</div>";
+      "</div>" +
+      '<div class="fassung" id="fassung"></div>';
+
+    /* Welche Fassung laeuft — und liegt dieselbe im Offline-Speicher?
+       Ohne diese Zeile laesst sich nach einem Update nicht nachsehen,
+       ob es auf dem Geraet wirklich angekommen ist. */
+    var fz = $("#fassung");
+    fz.innerHTML = "Kiswahili " + FASSUNG + " · " + KS.lessons.length + " Lektionen · " +
+                   KS.vocab.length + " Vokabeln";
+    if (window.caches && caches.keys) {
+      caches.keys().then(function (namen) {
+        var eigene = [];
+        namen.forEach(function (n) { if (n.indexOf("kiswahili-") === 0) eigene.push(n); });
+        if (!eigene.length) return;
+        var imCache = eigene[0].replace("kiswahili-", "");
+        fz.innerHTML += "<br>Offline-Speicher: " + esc(eigene[0]) +
+          (imCache === FASSUNG ? " — aktuell"
+                               : " — älter, wird beim nächsten Öffnen erneuert");
+      })["catch"](function () { /* kein Zugriff, dann eben ohne */ });
+    }
 
     $("#sDir").onchange = function () { p.settings.direction = this.value; KS.store.touch(); };
     $("#sGoal").onchange = function () { p.settings.dailyGoal = parseInt(this.value, 10); KS.store.touch(); };

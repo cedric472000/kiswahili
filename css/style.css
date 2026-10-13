@@ -877,6 +877,13 @@ input[type=text]:focus, select:focus {
 .panel .btnrow:last-child { margin-bottom: 0; }
 .panel .conj-controls { margin-bottom: 0; }
 
+/* Versionszeile ganz unten im Profil — leise, aber auffindbar */
+.fassung {
+  margin-top: 26px; text-align: center;
+  font-size: 12px; line-height: 1.7; color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+
 .confirmbox {
   margin-top: 14px; padding: 18px 20px;
   background: var(--no-bg); border: 1px solid color-mix(in srgb, var(--no) 26%, transparent);

@@ -272,7 +272,15 @@ Empfohlener Ort: **GitHub Pages** (kostenlos, HTTPS, feste Adresse, jede
 - **Android/Chrome** — bietet „App installieren" von selbst an
 - **iPhone/Safari** — *Teilen → Zum Home-Bildschirm*
 
-**Beim Veröffentlichen `VERSION` in `sw.js` hochzählen.** Ändert sich diese
+**Welche Fassung läuft, steht im Profil ganz unten.** Dort stehen zwei
+Zeilen: die Fassung der geladenen App (`FASSUNG` in `js/app.js`) und die
+Fassung, die tatsächlich im Offline-Speicher liegt. Weichen sie ab, ist das
+Update unterwegs und kommt beim nächsten Öffnen an. Beide Angaben müssen
+zusammenpassen — `test-pwa.js` vergleicht `FASSUNG` mit `VERSION` aus
+`sw.js`, damit die Anzeige nicht lügt.
+
+**Beim Veröffentlichen `VERSION` in `sw.js` hochzählen** — und `FASSUNG`
+in `js/app.js` gleich mit. Ändert sich diese
 Datei, installiert der Browser den Worker neu und wirft alte Caches weg.
 Ohne Änderung kann ein Gerät sonst auf einem alten Stand hängen bleiben.
 

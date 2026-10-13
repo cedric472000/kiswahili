@@ -15,7 +15,7 @@
    DATEIEN muss zu dem passen, was index.html laedt — test/test-pwa.js
    prueft genau das.                                                        */
 
-var VERSION = "kiswahili-v5";
+var VERSION = "kiswahili-v6";
 
 var DATEIEN = [
   "./",

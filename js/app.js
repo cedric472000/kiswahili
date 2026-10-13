@@ -4,7 +4,7 @@
 
   /* Fassung der App. Muss zur VERSION in sw.js passen — test-pwa.js
      prueft das, damit die Anzeige im Profil nicht luegt. */
-  var FASSUNG = "v5";
+  var FASSUNG = "v6";
 
   var app, rail, tabbar, topbar;
 
